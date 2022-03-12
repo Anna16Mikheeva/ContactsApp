@@ -49,7 +49,7 @@ namespace ContactsApp.View
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 newForm1 = new Form1();
+            AboutForm newForm1 = new AboutForm();
             newForm1.Show();
         }
 
@@ -80,8 +80,8 @@ namespace ContactsApp.View
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            ContactForm newForm = new ContactForm();
-            newForm.Show();
+            ContactForm contactForm = new ContactForm();
+            contactForm.Show();
             //listBox1.Items.Add("Anna");
         }
 
@@ -93,6 +93,12 @@ namespace ContactsApp.View
         private void DeleteButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.Show();
         }
     }
 }
