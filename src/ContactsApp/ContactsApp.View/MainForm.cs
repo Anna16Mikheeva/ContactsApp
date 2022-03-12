@@ -20,12 +20,7 @@ namespace ContactsApp.View
             StartPosition = FormStartPosition.CenterScreen;
             //textBox2.Text = "sdhfuhn";
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormEdit newForm = new FormEdit();
-            newForm.Show();
-            //listBox1.Items.Add("Anna");
-        }
+        
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -81,6 +76,23 @@ namespace ContactsApp.View
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            ContactForm newForm = new ContactForm();
+            newForm.Show();
+            //listBox1.Items.Add("Anna");
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

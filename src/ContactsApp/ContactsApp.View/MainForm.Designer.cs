@@ -68,7 +68,7 @@ namespace ContactsApp.View
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(859, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(859, 28);
             this.menuStrip1.TabIndex = 38;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,7 +77,7 @@ namespace ContactsApp.View
             this.aboutToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.helpToolStripMenuItem1});
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(46, 26);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(46, 24);
             this.aboutToolStripMenuItem1.Text = "File";
             // 
             // helpToolStripMenuItem1
@@ -93,7 +93,7 @@ namespace ContactsApp.View
             this.editContactToolStripMenuItem,
             this.removeContactToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // addContactToolStripMenuItem
@@ -119,7 +119,7 @@ namespace ContactsApp.View
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 26);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
@@ -269,8 +269,9 @@ namespace ContactsApp.View
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(26, 21);
             this.DeleteButton.TabIndex = 37;
-            this.DeleteButton.Text = "Уд";
+            this.DeleteButton.Text = "-";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // EditButton
             // 
@@ -279,8 +280,9 @@ namespace ContactsApp.View
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(47, 21);
             this.EditButton.TabIndex = 36;
-            this.EditButton.Text = "Ред";
+            this.EditButton.Text = "edit";
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // ContactsList
             // 
@@ -300,8 +302,9 @@ namespace ContactsApp.View
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(17, 21);
             this.AddButton.TabIndex = 35;
-            this.AddButton.Text = "Доб";
+            this.AddButton.Text = "+";
             this.AddButton.UseVisualStyleBackColor = false;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // MainForm
             // 
