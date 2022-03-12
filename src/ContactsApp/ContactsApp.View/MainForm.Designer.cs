@@ -29,6 +29,7 @@ namespace ContactsApp.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,7 +84,7 @@ namespace ContactsApp.View
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(116, 26);
             this.helpToolStripMenuItem1.Text = "Exit";
             // 
             // editToolStripMenuItem
@@ -125,7 +126,7 @@ namespace ContactsApp.View
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
             // 
@@ -331,6 +332,7 @@ namespace ContactsApp.View
             this.Controls.Add(this.PhoneLable);
             this.Controls.Add(this.EmailLable);
             this.Controls.Add(this.BirthdayDateTimePicker);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = " ContactsApp";
             this.Load += new System.EventHandler(this.MainForm_Load);
