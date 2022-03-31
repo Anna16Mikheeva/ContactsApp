@@ -35,8 +35,8 @@ namespace ContactsApp.View
             this.EmailLabel = new System.Windows.Forms.Label();
             this.GitHubLabel = new System.Windows.Forms.Label();
             this.YearOfCreationLabel = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.EmailLinkLabel = new System.Windows.Forms.LinkLabel();
+            this.GitHubLinkLabel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // ContactsAppLabel
@@ -44,7 +44,7 @@ namespace ContactsApp.View
             this.ContactsAppLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.ContactsAppLabel.AutoSize = true;
             this.ContactsAppLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ContactsAppLabel.Location = new System.Drawing.Point(12, 29);
+            this.ContactsAppLabel.Location = new System.Drawing.Point(12, 9);
             this.ContactsAppLabel.Name = "ContactsAppLabel";
             this.ContactsAppLabel.Size = new System.Drawing.Size(160, 29);
             this.ContactsAppLabel.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace ContactsApp.View
             // 
             this.VersionLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.VersionLabel.AutoSize = true;
-            this.VersionLabel.Location = new System.Drawing.Point(14, 81);
+            this.VersionLabel.Location = new System.Drawing.Point(12, 79);
             this.VersionLabel.Name = "VersionLabel";
             this.VersionLabel.Size = new System.Drawing.Size(55, 17);
             this.VersionLabel.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace ContactsApp.View
             // 
             this.AuthorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.AuthorLabel.AutoSize = true;
-            this.AuthorLabel.Location = new System.Drawing.Point(14, 141);
+            this.AuthorLabel.Location = new System.Drawing.Point(12, 142);
             this.AuthorLabel.Name = "AuthorLabel";
             this.AuthorLabel.Size = new System.Drawing.Size(155, 17);
             this.AuthorLabel.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace ContactsApp.View
             // 
             this.EmailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(14, 182);
+            this.EmailLabel.Location = new System.Drawing.Point(12, 182);
             this.EmailLabel.Name = "EmailLabel";
             this.EmailLabel.Size = new System.Drawing.Size(133, 17);
             this.EmailLabel.TabIndex = 3;
@@ -84,7 +84,7 @@ namespace ContactsApp.View
             // 
             this.GitHubLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.GitHubLabel.AutoSize = true;
-            this.GitHubLabel.Location = new System.Drawing.Point(14, 222);
+            this.GitHubLabel.Location = new System.Drawing.Point(12, 222);
             this.GitHubLabel.Name = "GitHubLabel";
             this.GitHubLabel.Size = new System.Drawing.Size(56, 17);
             this.GitHubLabel.TabIndex = 4;
@@ -94,41 +94,42 @@ namespace ContactsApp.View
             // 
             this.YearOfCreationLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.YearOfCreationLabel.AutoSize = true;
-            this.YearOfCreationLabel.Location = new System.Drawing.Point(14, 324);
+            this.YearOfCreationLabel.Location = new System.Drawing.Point(12, 327);
             this.YearOfCreationLabel.Name = "YearOfCreationLabel";
             this.YearOfCreationLabel.Size = new System.Drawing.Size(151, 17);
             this.YearOfCreationLabel.TabIndex = 5;
             this.YearOfCreationLabel.Text = "2022 Anna Mikheevaⓒ";
             // 
-            // linkLabel1
+            // EmailLinkLabel
             // 
-            this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(153, 182);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(163, 17);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "anna.mav31@gmail.com";
+            this.EmailLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.EmailLinkLabel.AutoSize = true;
+            this.EmailLinkLabel.Location = new System.Drawing.Point(151, 182);
+            this.EmailLinkLabel.Name = "EmailLinkLabel";
+            this.EmailLinkLabel.Size = new System.Drawing.Size(163, 17);
+            this.EmailLinkLabel.TabIndex = 6;
+            this.EmailLinkLabel.TabStop = true;
+            this.EmailLinkLabel.Text = "anna.mav31@gmail.com";
+            this.EmailLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.EmailLinkLabel_LinkClicked);
             // 
-            // linkLabel2
+            // GitHubLinkLabel
             // 
-            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(75, 222);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(206, 17);
-            this.linkLabel2.TabIndex = 7;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Anna16Mikheeva/ContactsApp-";
+            this.GitHubLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.GitHubLinkLabel.AutoSize = true;
+            this.GitHubLinkLabel.Location = new System.Drawing.Point(74, 222);
+            this.GitHubLinkLabel.Name = "GitHubLinkLabel";
+            this.GitHubLinkLabel.Size = new System.Drawing.Size(206, 17);
+            this.GitHubLinkLabel.TabIndex = 7;
+            this.GitHubLinkLabel.TabStop = true;
+            this.GitHubLinkLabel.Text = "Anna16Mikheeva/ContactsApp-";
             // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 353);
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.GitHubLinkLabel);
+            this.Controls.Add(this.EmailLinkLabel);
             this.Controls.Add(this.YearOfCreationLabel);
             this.Controls.Add(this.GitHubLabel);
             this.Controls.Add(this.EmailLabel);
@@ -152,7 +153,7 @@ namespace ContactsApp.View
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.Label GitHubLabel;
         private System.Windows.Forms.Label YearOfCreationLabel;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel EmailLinkLabel;
+        private System.Windows.Forms.LinkLabel GitHubLinkLabel;
     }
 }

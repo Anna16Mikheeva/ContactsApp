@@ -4,23 +4,23 @@ using System.Runtime.InteropServices;
 
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
-// связанные со сборкой.
-[assembly: AssemblyTitle("ContactsApp.Model")]
+// связанных со сборкой.
+[assembly: AssemblyTitle("Contacts.Mode")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("ContactsApp.Model")]
+[assembly: AssemblyProduct("Contacts.Mode")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
 // для компонентов COM. Если необходимо обратиться к типу в этой сборке через
-// COM, задайте атрибуту ComVisible значение TRUE для этого типа.
+// COM, следует установить атрибут ComVisible в TRUE для этого типа.
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("0bd8f099-5453-4359-8ccc-0e941abf8d8e")]
+[assembly: Guid("ab876f1a-99d9-47ed-b27e-95904ba15e6e")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //

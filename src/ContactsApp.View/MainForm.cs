@@ -17,8 +17,6 @@ namespace ContactsApp.View
         public MainForm()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.CenterScreen;
-            //textBox2.Text = "sdhfuhn";
         }
         
 
@@ -49,8 +47,7 @@ namespace ContactsApp.View
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutForm newForm1 = new AboutForm();
-            newForm1.Show();
+            
         }
 
         private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -80,14 +77,14 @@ namespace ContactsApp.View
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            ContactForm contactForm = new ContactForm();
+            Resources.ContactForm contactForm = new Resources.ContactForm();
             contactForm.Show();
-            //listBox1.Items.Add("Anna");
         }
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-
+            ContactForm contactForm = new ContactForm();
+            contactForm.Show();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -99,6 +96,33 @@ namespace ContactsApp.View
         {
             AboutForm aboutForm = new AboutForm();
             aboutForm.Show();
+        }
+
+        private void addContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ContactForm contactForm = new ContactForm();
+            contactForm.Show();
+        }
+
+        private void editContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ContactForm contactForm = new ContactForm();
+            contactForm.Show();
+        }
+
+        private void SurnameLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FindTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FindLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
