@@ -34,7 +34,7 @@ namespace ContactsApp.Model
         /// <summary>
         /// Дата рождения контакта.
         /// </summary>
-        private DateTime _dateBirth;
+        private DateTime _dateOfBirthние;
 
         /// <summary>
         /// E-mail контакта.
@@ -61,8 +61,8 @@ namespace ContactsApp.Model
                 {
                     throw new ArgumentException($"Surname must be no longer than 50 letters." + $"But was {value}");
                 }
-                //TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
-                //Console.WriteLine("\"{0}\" to titlecase: {1}", value, myTI.ToTitleCase(value));
+                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+                _surname = textInfo.ToTitleCase(value);
                 _surname = value;
             }
         }
@@ -82,6 +82,8 @@ namespace ContactsApp.Model
                 {
                     throw new ArgumentException($"Name must be no longer than 50 letters." + $"But was {value}");
                 }
+                TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+                _surname = textInfo.ToTitleCase(value);
                 _name = value;
             }
         }
@@ -104,15 +106,19 @@ namespace ContactsApp.Model
         {
             get
             {
-                return _dateBirth;
+                return _dateOfBirth;
             }
             set
             {
-                //if (value < 1900.01.01)
-                //{
-                //    throw new ArgumentException($"Name must be no longer than 50 letters." + $"But was {value}");
-                //}
-                _dateBirth = value;
+                if (value.Year < 1900)
+                {
+                    throw new ArgumentException($"Year of birth cannot be less than 1900." + $"But was {value}");
+                }
+                if(value.Date > DateTime.Now)
+                {
+                    throw new ArgumentException($"Date of birth cannot be later than today." + $"But was {value}");
+                }
+                _dateOfBirth = value;
             }
         }
 

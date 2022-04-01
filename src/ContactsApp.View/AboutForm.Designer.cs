@@ -116,12 +116,13 @@ namespace ContactsApp.View
             // 
             this.GitHubLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.GitHubLinkLabel.AutoSize = true;
+            this.GitHubLinkLabel.LinkArea = new System.Windows.Forms.LinkArea(0, 30);
             this.GitHubLinkLabel.Location = new System.Drawing.Point(74, 222);
             this.GitHubLinkLabel.Name = "GitHubLinkLabel";
-            this.GitHubLinkLabel.Size = new System.Drawing.Size(206, 17);
+            this.GitHubLinkLabel.Size = new System.Drawing.Size(201, 34);
             this.GitHubLinkLabel.TabIndex = 7;
             this.GitHubLinkLabel.TabStop = true;
-            this.GitHubLinkLabel.Text = "Anna16Mikheeva/ContactsApp-";
+            this.GitHubLinkLabel.Text = "Anna16Mikheeva/ContactsApp\r\n\r\n";
             // 
             // AboutForm
             // 
