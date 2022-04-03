@@ -27,26 +27,12 @@ namespace ContactsApp.Model
             }
             set
             {
-                int sum=0, v=value;
-                while (v / 10 != 0)
-                {
-                    sum++;
-                    v = v / 10;
-                }
-                if ((value/10!=7)&&(sum+1!=11))
+                if ((value<70000000000)||(value > 7999999999))
                 {
                     throw new ArgumentException($"The number must start with 7 and has 11 digits." + $"But was {value}");
                 }
                 _number = value;
             }
-        }
-
-        /// <summary>
-        /// Создает экземпляр <see cref="PhoneNumber">.
-        /// </summary>
-        public PhoneNumber(int number)
-        {
-            Number = number;
         }
     }
 

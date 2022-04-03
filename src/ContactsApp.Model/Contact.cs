@@ -22,7 +22,7 @@ namespace ContactsApp.Model
         private string _surname;
 
         /// <summary>
-        /// Фамилия
+        /// Фамилия.
         /// </summary>
         private string _name;
 
@@ -34,7 +34,7 @@ namespace ContactsApp.Model
         /// <summary>
         /// Дата рождения контакта.
         /// </summary>
-        private DateTime _dateOfBirthние;
+        private DateTime _dateOfBirth;
 
         /// <summary>
         /// E-mail контакта.
@@ -102,7 +102,7 @@ namespace ContactsApp.Model
         /// <summary>
         /// Возвращает или задает дату.
         /// </summary>
-        public DateTime dateBirth
+        public DateTime dateOfBirth
         {
             get
             {
