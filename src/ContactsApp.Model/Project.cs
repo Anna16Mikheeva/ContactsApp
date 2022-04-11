@@ -12,7 +12,7 @@ namespace ContactsApp.Model
     /// <summary>
     /// Проект.
     /// </summary> 
-    class Project
+    public class Project
     {
         /// <summary>
         /// Список.
@@ -22,16 +22,26 @@ namespace ContactsApp.Model
         /// <summary>
         /// Возвращает или задает проект.
         /// </summary>
-        public string List 
+        //public string List 
+        //{
+        //    get
+        //    {
+        //        return _list;
+        //    }
+        //    set
+        //    {
+        //        _list = value;
+        //    }
+        //}
+        public List<Contact> Contacts { get; set; } = new List<Contact>();
+
+        /// <summary>
+        /// Создает экземпляр <see cref="Contact">.
+        /// </summary>
+        public Project()
         {
-            get
-            {
-                return _list;
-            }
-            set
-            {
-                _list = value;
-            }
+
         }
+
     }
 }

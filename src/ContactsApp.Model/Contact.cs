@@ -14,7 +14,7 @@ namespace ContactsApp.Model
     /// <summary>
     /// Контакт.
     /// </summary> 
-    class Contact
+    public class Contact
     {
         /// <summary>
         /// Имя.
@@ -63,7 +63,6 @@ namespace ContactsApp.Model
                 }
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 _surname = textInfo.ToTitleCase(value);
-                _surname = value;
             }
         }
 
@@ -158,6 +157,10 @@ namespace ContactsApp.Model
                 }
                 _idVk = value;
             }
+        }
+        public Contact()
+        {
+
         }
     }
 }

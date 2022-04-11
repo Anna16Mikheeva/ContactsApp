@@ -7,18 +7,32 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ContactsApp.Model;
 using System.Windows.Forms;
-
 
 namespace ContactsApp.View
 {
     public partial class MainForm : Form
     {
+       private Project _project=new Project();
         public MainForm()
         {
             InitializeComponent();
+
         }
         
+
+        private void UpdateListBox()
+        {
+            //int i=1;
+            //_project.Contacts[i].Name;
+            ContactsListBox.Items.Clear();
+            for(int i=0;i< 10;i++)
+            {
+                ContactsListBox.Items.Add(_project.Contacts[i].Surname);
+            }
+        }
+
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -83,12 +97,14 @@ namespace ContactsApp.View
 
         private void EditButton_Click(object sender, EventArgs e)
         {
+            //ContactsListBox.Items.Add("Anna");
             ContactForm contactForm = new ContactForm();
             contactForm.Show();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            
 
         }
 
@@ -121,6 +137,11 @@ namespace ContactsApp.View
         }
 
         private void FindLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VkComTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }
