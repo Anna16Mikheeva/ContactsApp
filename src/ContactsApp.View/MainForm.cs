@@ -20,12 +20,13 @@ namespace ContactsApp.View
             InitializeComponent();
 
         }
-        
 
+
+        /// <summary>
+        /// Очищает ContsctsListBox и добавляет данные из коллекции.
+        /// </summary> 
         private void UpdateListBox()
         {
-            //int i=1;
-            //_project.Contacts[i].Name;
             ContactsListBox.Items.Clear();
             for(int i=0;i< 10;i++)
             {
@@ -33,6 +34,37 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Добавление нового объекта в _project.
+        /// </summary> 
+        private void AddContact()
+        {
+            // Создаем массив букв, которые мы будем использовать.
+            char[] letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+
+            // Создаем генератор случайных чисел.
+            Random rand = new Random();
+
+            // Делаем слова.
+            for (int i = 1; i <= 10; i++)
+            {
+                // Сделайте слово.
+                string word = "";
+                for (int j = 1; j <= 10; j++)
+                {
+                    // Выбор случайного числа от 0 до 25
+                    // для выбора буквы из массива букв.
+                    int letter_num = rand.Next(0, letters.Length - 1);
+
+                    // Добавить письмо.
+                    word += letters[letter_num];
+                }
+
+                // Добавьте слово в список.
+                _project.Contacts[i].Surname=word;
+            }
+
+        }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {

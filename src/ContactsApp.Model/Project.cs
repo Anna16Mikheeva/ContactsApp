@@ -19,20 +19,8 @@ namespace ContactsApp.Model
         /// </summary> 
         private string _list;
 
-        /// <summary>
-        /// Возвращает или задает проект.
+        /// Возвращает или задает контакт.
         /// </summary>
-        //public string List 
-        //{
-        //    get
-        //    {
-        //        return _list;
-        //    }
-        //    set
-        //    {
-        //        _list = value;
-        //    }
-        //}
         public List<Contact> Contacts { get; set; } = new List<Contact>();
 
         /// <summary>

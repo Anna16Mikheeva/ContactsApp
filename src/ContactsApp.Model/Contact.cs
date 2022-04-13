@@ -101,7 +101,7 @@ namespace ContactsApp.Model
         /// <summary>
         /// Возвращает или задает дату.
         /// </summary>
-        public DateTime dateOfBirth
+        public DateTime DateOfBirth
         {
             get
             {
