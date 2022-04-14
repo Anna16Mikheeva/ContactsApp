@@ -150,6 +150,8 @@ namespace ContactsApp.View
         {
             ContactForm contactForm = new ContactForm();
             contactForm.Show();
+            AddContact();
+            UpdateListBox();
         }
 
         private void editContactToolStripMenuItem_Click(object sender, EventArgs e)
