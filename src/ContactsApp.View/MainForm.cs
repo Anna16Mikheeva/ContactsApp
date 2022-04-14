@@ -135,7 +135,7 @@ namespace ContactsApp.View
         {
             Resources.ContactForm contactForm = new Resources.ContactForm();
             contactForm.Show();
-            AddContact();
+            AddContact()ж
             UpdateListBox();
         }
 
