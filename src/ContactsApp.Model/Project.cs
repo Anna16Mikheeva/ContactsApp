@@ -15,21 +15,8 @@ namespace ContactsApp.Model
     public class Project
     {
         /// <summary>
-        /// Список.
-        /// </summary> 
-        private string _list;
-
         /// Возвращает или задает контакт.
         /// </summary>
         public List<Contact> Contacts { get; set; } = new List<Contact>();
-
-        /// <summary>
-        /// Создает экземпляр <see cref="Contact">.
-        /// </summary>
-        public Project()
-        {
-
-        }
-
     }
 }

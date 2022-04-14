@@ -28,7 +28,11 @@ namespace ContactsApp.View
         private void UpdateListBox()
         {
             ContactsListBox.Items.Clear();
-           // ContactsListBox.Items.Add(_project.Contacts);
+            for(int i=0;i<_project.Contacts.Count;i++)
+            {
+               ContactsListBox.Items.Add(_project.Contacts[i].Surname);
+            }
+            
         }
 
         /// <summary>
@@ -45,24 +49,21 @@ namespace ContactsApp.View
                                    "yup.rty@mail.ru", "yrjhnf.67.tyutu@gmail.com"};
             string[] arrayIdVk = { "193179578", "fgth2145", "589632100", "op4578963", "745896320",
                                    "afrt12458", "458963215", "457896301", "521003699", "458796320"};
-            PhoneNumber[] arrayNumber = { 79521581576, 79234485215, 78925601475, 78513694258, 71504698720,
-                                          78415620748, 79521581045, 79501432289, 778955142001, 74120036555};
+            PhoneNumber[] arrayNumber = { new PhoneNumber(79521581576), new PhoneNumber(79234485215), new PhoneNumber(78925601475),
+                                          new PhoneNumber(78513694258), new PhoneNumber(71504698720), new PhoneNumber(78415620748),
+                                          new PhoneNumber(79521581045), new PhoneNumber(79501432289), new PhoneNumber(778955142001),
+                                          new PhoneNumber(74120036555)};
 
             // Создаем генератор случайных чисел.
             Random rand = new Random();
             
-            string surname, name, email, idVk;
-            PhoneNumber number;
             DateTime date = new DateTime(rand.Next(1900, DateTime.Now.Year), rand.Next(1, 12), rand.Next(1, 31));
-            int letter_num = rand.Next(0, arraySurname.Length - 1);
+            int selectedtemNumber = rand.Next(0, arraySurname.Length - 1);
+            Console.WriteLine(arraySurname[selectedtemNumber]); 
+            _project.Contacts.Add(new Contact(arraySurname[selectedtemNumber], arrayName[selectedtemNumber], 
+                                  arrayNumber[selectedtemNumber], date, arrayEmail[selectedtemNumber], 
+                                  arrayIdVk[selectedtemNumber]));
 
-            surname = arraySurname[letter_num];
-            name = arrayName[letter_num];
-            number = arrayNumber[letter_num];
-            email = arrayEmail[letter_num];
-            idVk = arrayIdVk[letter_num];
-
-            _project.Contacts.Add(new Contact(surname, name, number, date, email, idVk));
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -121,8 +122,8 @@ namespace ContactsApp.View
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Resources.ContactForm contactForm = new Resources.ContactForm();
-            contactForm.Show();
+            //Resources.ContactForm contactForm = new Resources.ContactForm();
+            //contactForm.Show();
             AddContact();
             UpdateListBox();
         }
@@ -173,6 +174,11 @@ namespace ContactsApp.View
         }
 
         private void VkComTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NameLable_Click(object sender, EventArgs e)
         {
 
         }

@@ -82,7 +82,7 @@ namespace ContactsApp.Model
                     throw new ArgumentException($"Name must be no longer than 50 letters." + $"But was {value}");
                 }
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-                _surname = textInfo.ToTitleCase(value);
+                _name = textInfo.ToTitleCase(value);
                 _name = value;
             }
         }
@@ -161,13 +161,11 @@ namespace ContactsApp.Model
 
         public Contact(string surname, string name, PhoneNumber phoneNumber, DateTime dateOfBirth, string email, string idVk)
         {
-            surname = _surname;
-            name = _name;
-            phoneNumber = _phoneNumber;
-            dateOfBirth = _dateOfBirth;
-            email = _email;
-            idVk = _idVk;
+            Surname = surname;
+            Name = name;
+            DateOfBirth = dateOfBirth;
+            Email = email;
+            IdVk = idVk;
         }
-
     }
 }
