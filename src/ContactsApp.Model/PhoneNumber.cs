@@ -14,12 +14,12 @@ namespace ContactsApp.Model
         /// <summary>
         /// Номер телефона.
         /// </summary> 
-        private int _number;
+        private long _number;
 
         /// <summary>
         /// Возвращает или задает номер телефона.
         /// </summary> 
-        public int Number
+        public long Number
         {
             get
             {
@@ -33,6 +33,15 @@ namespace ContactsApp.Model
                 }
                 _number = value;
             }
+        }
+        public PhoneNumber(long number)
+        {
+            number = _number;
+        }
+
+        public static implicit operator PhoneNumber(long v)
+        {
+            throw new NotImplementedException();
         }
     }
 

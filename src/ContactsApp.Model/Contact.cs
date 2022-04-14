@@ -158,9 +158,16 @@ namespace ContactsApp.Model
                 _idVk = value;
             }
         }
-        public Contact()
-        {
 
+        public Contact(string surname, string name, PhoneNumber phoneNumber, DateTime dateOfBirth, string email, string idVk)
+        {
+            surname = _surname;
+            name = _name;
+            phoneNumber = _phoneNumber;
+            dateOfBirth = _dateOfBirth;
+            email = _email;
+            idVk = _idVk;
         }
+
     }
 }
