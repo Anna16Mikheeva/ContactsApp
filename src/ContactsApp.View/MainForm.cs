@@ -40,31 +40,46 @@ namespace ContactsApp.View
         /// </summary> 
         private void AddContact()
         {
+            // Создаем генератор случайных чисел.
+            Random rand = new Random();
             string[] arraySurname = { "Ivanov", "Petrova", "Pereversev", "Osmanova", "Afanasev", 
                                       "Merkulov", "Volkov", "Savchina", "Drey", "Simakov"};
             string[] arrayName = {"Kirill", "Anastasia", "Mikhail", "Lilya", "Dmitriy",
                                   "Andrey", "Evgeniy", "Julia", "Ekaterina", "Yuri"};
-            string[] arrayEmail = {"kivbic@gmail.com", "ejjf18mf@yandex.ru", "hy6k89@mail.ru", "ouy90.qr@gmail.com", 
-                                   "jfhfhj.78@yandex.ru", "op90tur@tusur.ru", "anas89sia@yandex.ru", "olga12orlova@gmail.com",
+            PhoneNumber[] arrayNumber = { new PhoneNumber(79521581576), new PhoneNumber(79234485215),
+                                          new PhoneNumber(78925601475), new PhoneNumber(78513694258), 
+                                          new PhoneNumber(71504698720), new PhoneNumber(78415620748),
+                                          new PhoneNumber(79521581045), new PhoneNumber(79501432289), 
+                                          new PhoneNumber(778955142001), new PhoneNumber(74120036555)};
+            DateTime date = new DateTime(rand.Next(1900, DateTime.Now.Year), rand.Next(1, 12), 
+                                         rand.Next(1, 31));
+            string[] arrayEmail = {"kivbic@gmail.com", "ejjf18mf@yandex.ru", "hy6k89@mail.ru", 
+                                   "ouy90.qr@gmail.com", "jfhfhj.78@yandex.ru", "op90tur@tusur.ru", 
+                                   "anas89sia@yandex.ru", "olga12orlova@gmail.com",
                                    "yup.rty@mail.ru", "yrjhnf.67.tyutu@gmail.com"};
             string[] arrayIdVk = { "193179578", "fgth2145", "589632100", "op4578963", "745896320",
                                    "afrt12458", "458963215", "457896301", "521003699", "458796320"};
-            PhoneNumber[] arrayNumber = { new PhoneNumber(79521581576), new PhoneNumber(79234485215), new PhoneNumber(78925601475),
-                                          new PhoneNumber(78513694258), new PhoneNumber(71504698720), new PhoneNumber(78415620748),
-                                          new PhoneNumber(79521581045), new PhoneNumber(79501432289), new PhoneNumber(778955142001),
-                                          new PhoneNumber(74120036555)};
-
-            // Создаем генератор случайных чисел.
-            Random rand = new Random();
             
-            DateTime date = new DateTime(rand.Next(1900, DateTime.Now.Year), rand.Next(1, 12), rand.Next(1, 31));
-            int selectedtemNumber = rand.Next(0, arraySurname.Length - 1);
-            Console.WriteLine(arraySurname[selectedtemNumber]); 
-            _project.Contacts.Add(new Contact(arraySurname[selectedtemNumber], arrayName[selectedtemNumber], 
-                                  arrayNumber[selectedtemNumber], date, arrayEmail[selectedtemNumber], 
-                                  arrayIdVk[selectedtemNumber]));
+            Console.WriteLine(arraySurname[rand.Next(0, arraySurname.Length - 1)]); 
+            _project.Contacts.Add(new Contact(arraySurname[rand.Next(0, arraySurname.Length - 1)], 
+                                  arrayName[rand.Next(0, arraySurname.Length - 1)], 
+                                  arrayNumber[rand.Next(0, arraySurname.Length - 1)], 
+                                  date, arrayEmail[rand.Next(0, arraySurname.Length - 1)], 
+                                  arrayIdVk[rand.Next(0, arraySurname.Length - 1)]));
 
         }
+
+        /// <summary>
+        /// Удаление контакта из коллекции и ContactsListBox.
+        /// </summary> 
+        private void RemoveContact(int index)
+        {
+            //Удаление контакта из ContactsListBox.
+            ContactsListBox.Items.RemoveAt(index);
+            //Удаление контакта из коллекции.
+            _project.Contacts.RemoveAt(index);
+        }
+
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -136,7 +151,7 @@ namespace ContactsApp.View
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            
+            RemoveContact(ContactsListBox.SelectedIndex);
 
         }
 
