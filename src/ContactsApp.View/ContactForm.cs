@@ -85,8 +85,6 @@ namespace ContactsApp.View.Resources
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            //MainForm mainForm = new MainForm(); 
-            //mainForm.UpdateListBox();
             Close();
         }
 
