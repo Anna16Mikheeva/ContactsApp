@@ -74,10 +74,17 @@ namespace ContactsApp.View
         /// </summary> 
         private void RemoveContact(int index)
         {
-            //Удаление контакта из ContactsListBox.
-            ContactsListBox.Items.RemoveAt(index);
-            //Удаление контакта из коллекции.
-            _project.Contacts.RemoveAt(index);
+            if (index == -1)
+            {
+
+            }
+            else
+            {
+                //Удаление контакта из ContactsListBox.
+                ContactsListBox.Items.RemoveAt(index);
+                //Удаление контакта из коллекции.
+                _project.Contacts.RemoveAt(index);
+            }
         }
 
 
@@ -137,8 +144,8 @@ namespace ContactsApp.View
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            //Resources.ContactForm contactForm = new Resources.ContactForm();
-            //contactForm.Show();
+            Resources.ContactForm contactForm = new Resources.ContactForm();
+            contactForm.Show();
             AddContact();
             UpdateListBox();
         }
@@ -198,6 +205,12 @@ namespace ContactsApp.View
         private void NameLable_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void removeContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Удаление контакта из ContactsListBox.
+            RemoveContact(ContactsListBox.SelectedIndex);
         }
     }
 }
