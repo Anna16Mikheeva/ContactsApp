@@ -109,7 +109,7 @@ namespace ContactsApp.View
                 SurnameTextBox.Text = _project.Contacts[index].Surname;
                 NameTextBox.Text = _project.Contacts[index].Name;
                 DateOfBirthDateTimePicker.Value = _project.Contacts[index].DateOfBirth;
-                PhoneTextBox.Text = _project.Contacts[index].PhoneNumber;
+                //PhoneTextBox.Text = _project.Contacts[index].PhoneNumber;
                 EmailTextBox.Text = _project.Contacts[index].Email;
                 VkComTextBox.Text = _project.Contacts[index].IdVk;
             }
@@ -243,6 +243,17 @@ namespace ContactsApp.View
         private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateSelectedContact(ContactsListBox.SelectedIndex);
+        }
+
+        private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Are you sure you want to exit the app?");
+            Close();
+        }
+
+        private void aboutToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
