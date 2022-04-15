@@ -80,6 +80,7 @@ namespace ContactsApp.View
             }
             else
             {
+                MessageBox.Show($"Do you really want to remove {_project.Contacts[index].Surname}?");
                 //Удаление контакта из ContactsListBox.
                 ContactsListBox.Items.RemoveAt(index);
                 //Удаление контакта из коллекции.
