@@ -80,13 +80,21 @@ namespace ContactsApp.View
             }
             else
             {
-                MessageBox.Show($"Do you really want to remove " +
-                                $"{_project.Contacts[index].Surname}?");
-                //Удаление контакта из ContactsListBox.
-                ContactsListBox.Items.RemoveAt(index);
-                //Удаление контакта из коллекции.
-                _project.Contacts.RemoveAt(index);
-                //ContactsListBox.SelectedIndex++;
+                DialogResult result = MessageBox.Show(
+       "$Do you really want to remove " + $"{_project.Contacts[index].Surname}?",
+       "Message",
+       MessageBoxButtons.YesNo,
+       MessageBoxIcon.Information,
+       MessageBoxDefaultButton.Button1,
+       MessageBoxOptions.DefaultDesktopOnly);
+                if (result == DialogResult.Yes)
+                {
+                    //Удаление контакта из ContactsListBox.
+                    ContactsListBox.Items.RemoveAt(index);
+                    //Удаление контакта из коллекции.
+                    _project.Contacts.RemoveAt(index);
+                    //ContactsListBox.SelectedIndex++;
+                }
             }
         }
 
@@ -247,8 +255,17 @@ namespace ContactsApp.View
 
         private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Are you sure you want to exit the app?");
-            Close();
+            DialogResult result = MessageBox.Show(
+       "Are you sure you want to exit the app?",
+       "Message",
+       MessageBoxButtons.YesNo,
+       MessageBoxIcon.Information,
+       MessageBoxDefaultButton.Button1,
+       MessageBoxOptions.DefaultDesktopOnly);
+            if(result == DialogResult.Yes)
+            {
+                Close();
+            }
         }
 
         private void aboutToolStripMenuItem1_Click_1(object sender, EventArgs e)
