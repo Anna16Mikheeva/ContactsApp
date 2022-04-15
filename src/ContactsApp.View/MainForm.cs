@@ -42,6 +42,7 @@ namespace ContactsApp.View
         {
             // Создаем генератор случайных чисел.
             Random rand = new Random();
+            //Создаем массивы данных.
             string[] arraySurname = { "ivanov", "petrova", "Pereversev", "Osmanova", "Afanasev", 
                                       "Merkulov", "volkov", "Savchina", "Drey", "Simakov"};
             string[] arrayName = {"Kirill", "Anastasia", "Mikhail", "Lilya", "Dmitriy",
@@ -74,19 +75,22 @@ namespace ContactsApp.View
         /// </summary> 
         private void RemoveContact(int index)
         {
+            //Если не выбран никакой контакт, то удаления не происходит,
+            //иначе выодит диалоговое окно.
             if (index == -1)
             {
 
             }
             else
             {
+                //Вывод диалогового окна при удалении контакта.
                 DialogResult result = MessageBox.Show(
-       "$Do you really want to remove " + $"{_project.Contacts[index].Surname}?",
-       "Message",
-       MessageBoxButtons.YesNo,
-       MessageBoxIcon.Information,
-       MessageBoxDefaultButton.Button1,
-       MessageBoxOptions.DefaultDesktopOnly);
+                "$Do you really want to remove " + $"{_project.Contacts[index].Surname}?",
+                "Message",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1,
+                MessageBoxOptions.DefaultDesktopOnly);
                 if (result == DialogResult.Yes)
                 {
                     //Удаление контакта из ContactsListBox.
@@ -103,6 +107,8 @@ namespace ContactsApp.View
         /// </summary> 
         private void UpdateSelectedContact(int index)
         {
+            //Если не выбран контакт, то правая панель становится пустой
+            //иначе панель заполняется данными выбранного контакта.
             if (index == -1)
             {
                 SurnameTextBox.Text = "";
@@ -256,12 +262,12 @@ namespace ContactsApp.View
         private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-       "Are you sure you want to exit the app?",
-       "Message",
-       MessageBoxButtons.YesNo,
-       MessageBoxIcon.Information,
-       MessageBoxDefaultButton.Button1,
-       MessageBoxOptions.DefaultDesktopOnly);
+            "Are you sure you want to exit the app?",
+            "Message",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1,
+            MessageBoxOptions.DefaultDesktopOnly);
             if(result == DialogResult.Yes)
             {
                 Close();
