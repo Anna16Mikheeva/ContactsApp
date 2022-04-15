@@ -86,6 +86,7 @@ namespace ContactsApp.View
                 ContactsListBox.Items.RemoveAt(index);
                 //Удаление контакта из коллекции.
                 _project.Contacts.RemoveAt(index);
+                //ContactsListBox.SelectedIndex++;
             }
         }
 
@@ -94,16 +95,26 @@ namespace ContactsApp.View
         /// </summary> 
         private void UpdateSelectedContact(int index)
         {
-            SurnameTextBox.Text = _project.Contacts[index].Surname;
-            NameTextBox.Text = _project.Contacts[index].Name;
-            DateOfBirthDateTimePicker.Value = _project.Contacts[index].DateOfBirth;
-            //PhoneTextBox.Text = _project.Contacts[index].PhoneNumber;
-            EmailTextBox.Text = _project.Contacts[index].Email;
-            VkComTextBox.Text = _project.Contacts[index].IdVk;
+            if (index == -1)
+            {
+                SurnameTextBox.Text = "";
+                NameTextBox.Text = "";
+                DateOfBirthDateTimePicker.Value = DateTime.Now;
+                //PhoneTextBox.Text = "";
+                EmailTextBox.Text = "";
+                VkComTextBox.Text = "";
+            }
+            else
+            {
+                SurnameTextBox.Text = _project.Contacts[index].Surname;
+                NameTextBox.Text = _project.Contacts[index].Name;
+                DateOfBirthDateTimePicker.Value = _project.Contacts[index].DateOfBirth;
+                //PhoneTextBox.Text = _project.Contacts[index].PhoneNumber;
+                EmailTextBox.Text = _project.Contacts[index].Email;
+                VkComTextBox.Text = _project.Contacts[index].IdVk;
+            }
         }
 
-
-        private void SelectedIn
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Convert.ToString(_project.Contacts[index].PhoneNumber);
@@ -111,7 +122,7 @@ namespace ContactsApp.View
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
