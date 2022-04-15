@@ -42,8 +42,8 @@ namespace ContactsApp.View
         {
             // Создаем генератор случайных чисел.
             Random rand = new Random();
-            string[] arraySurname = { "Ivanov", "Petrova", "Pereversev", "Osmanova", "Afanasev", 
-                                      "Merkulov", "Volkov", "Savchina", "Drey", "Simakov"};
+            string[] arraySurname = { "ivanov", "petrova", "Pereversev", "Osmanova", "Afanasev", 
+                                      "Merkulov", "volkov", "Savchina", "Drey", "Simakov"};
             string[] arrayName = {"Kirill", "Anastasia", "Mikhail", "Lilya", "Dmitriy",
                                   "Andrey", "Evgeniy", "Julia", "Ekaterina", "Yuri"};
             PhoneNumber[] arrayNumber = { new PhoneNumber(79521581576), new PhoneNumber(79234485215),
@@ -80,7 +80,8 @@ namespace ContactsApp.View
             }
             else
             {
-                MessageBox.Show($"Do you really want to remove {_project.Contacts[index].Surname}?");
+                MessageBox.Show($"Do you really want to remove " +
+                                $"{_project.Contacts[index].Surname}?");
                 //Удаление контакта из ContactsListBox.
                 ContactsListBox.Items.RemoveAt(index);
                 //Удаление контакта из коллекции.
@@ -88,10 +89,24 @@ namespace ContactsApp.View
             }
         }
 
+        /// <summary>
+        /// Заполнение правой панели правого окна данными выбранного контакта.
+        /// </summary> 
+        private void UpdateSelectedContact(int index)
+        {
+            SurnameTextBox.Text = _project.Contacts[index].Surname;
+            NameTextBox.Text = _project.Contacts[index].Name;
+            DateOfBirthDateTimePicker.Value = _project.Contacts[index].DateOfBirth;
+            //PhoneTextBox.Text = _project.Contacts[index].PhoneNumber;
+            EmailTextBox.Text = _project.Contacts[index].Email;
+            VkComTextBox.Text = _project.Contacts[index].IdVk;
+        }
 
+
+        private void SelectedIn
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //Convert.ToString(_project.Contacts[index].PhoneNumber);
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -212,6 +227,11 @@ namespace ContactsApp.View
         {
             //Удаление контакта из ContactsListBox.
             RemoveContact(ContactsListBox.SelectedIndex);
+        }
+
+        private void ContactsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateSelectedContact(ContactsListBox.SelectedIndex);
         }
     }
 }
