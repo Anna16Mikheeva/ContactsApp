@@ -109,7 +109,7 @@ namespace ContactsApp.View
                 SurnameTextBox.Text = _project.Contacts[index].Surname;
                 NameTextBox.Text = _project.Contacts[index].Name;
                 DateOfBirthDateTimePicker.Value = _project.Contacts[index].DateOfBirth;
-                //PhoneTextBox.Text = _project.Contacts[index].PhoneNumber;
+                PhoneTextBox.Text = _project.Contacts[index].PhoneNumber;
                 EmailTextBox.Text = _project.Contacts[index].Email;
                 VkComTextBox.Text = _project.Contacts[index].IdVk;
             }
