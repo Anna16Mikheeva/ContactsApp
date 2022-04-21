@@ -19,9 +19,19 @@ namespace ContactsApp.View.Resources
             InitializeComponent();
             UpdateForm();
         }
-        private Contact _contact = new Contact("Ivanov", "Petr", 78965412300, new DateTime(1999, 2, 12), "fdvdf169fgfgfg@gmail.com", "158963578");
-        
-        
+
+        /// <summary>
+        /// Создание экземпляра класса Contact и заполнение данными.
+        /// </summary> 
+        private Contact _contact = new Contact("Ivanov", "Petr", 78965412300, 
+                                   new DateTime(1999, 2, 12), "fdvdf169fgfgfg@gmail.com",
+                                   "158963578");
+        private string _surnameError, _nameError, _phoneNumberError, _birthOfDateError,
+                       _emailError, _idVkError;
+
+        /// <summary>
+        /// Заполнение окна данными нового контакта.
+        /// </summary> 
         private void UpdateForm()
         {
             SurnameTextBox.Text = _contact.Surname;
@@ -32,56 +42,171 @@ namespace ContactsApp.View.Resources
             VkComTextBox.Text = _contact.IdVk;
         }
 
+        /// <summary>
+        /// Проверка правильности введенной фамилии.
+        /// </summary> 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 _contact.Surname = SurnameTextBox.Text;
-                SurnameTextBox.BackColor = Color.White;
-            }
-            catch
-            {
-                if (_contact.Surname.Length > 2)
+                _surnameError = "";
+                if (_contact.Surname.Length < 50)
                 {
-                    SurnameTextBox.BackColor = Color.Red;
+                    SurnameTextBox.BackColor = Color.White;
                 }
             }
+            catch(ArgumentException exception)
+            {
+                SurnameTextBox.BackColor = Color.LightPink;
+                _surnameError = exception.Message;
+            }
         }
 
+        /// <summary>
+        /// Вызов сообщения для пользователя о неправильно введенных данных.
+        /// </summary> 
+        private bool CheckFromOnErrors()
+        {
+            if ((_surnameError == "") && (_nameError == "") && (_phoneNumberError == "")
+                && (_birthOfDateError == "") && (_emailError == "") && (_idVkError == ""))
+            {
+                return true;
+            }
+            else
+            {
+                if (_surnameError != "")
+                {
+                    MessageBox.Show(_surnameError);
+                }
+                if (_nameError != "")
+                {
+                    MessageBox.Show(_nameError);
+                }
+                //if (_phoneNumberError != "")
+                //{
+                //    MessageBox.Show(_phoneNumberError);
+                //}
+                if (_birthOfDateError != "")
+                {
+                    MessageBox.Show(_birthOfDateError);
+                }
+                if (_emailError != "")
+                {
+                    MessageBox.Show(_emailError);
+                }
+                if (_idVkError != "")
+                {
+                    MessageBox.Show(_idVkError);
+                }
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Проверка правильности выбранной даты.
+        /// </summary> 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            DateOfBirthTimePicker.CalendarTitleBackColor = Color.Red;
+            try
+            {
+                _contact.DateOfBirth = DateOfBirthTimePicker.Value;
+                _birthOfDateError = "";
+                if (_contact.DateOfBirth.Year > 1900)
+                {
+                    DateOfBirthTimePicker.BackColor = Color.White;
+                }
+            }
+            catch (ArgumentException exception)
+            {
+                DateOfBirthTimePicker.CalendarTitleBackColor = Color.LightPink;
+                _birthOfDateError = exception.Message;
+            }
         }
 
+        /// <summary>
+        /// Проверка правильности введенной электронной почты.
+        /// </summary> 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _contact.Email = EmailTextBox.Text;
+                _emailError = "";
+                if (_contact.Email.Length < 50)
+                {
+                    EmailTextBox.BackColor = Color.White;
+                }
+            }
+            catch (ArgumentException exception)
+            {
+                EmailTextBox.BackColor = Color.LightPink;
+                _emailError = exception.Message;
+            }
         }
 
+        /// <summary>
+        /// Проверка правильности введенного номера телефона.
+        /// </summary> 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    _contact.PhoneNumber = Convert.ToInt64(PhoneTextBox.Text);
-            //    PhoneTextBox.ForeColor = Color.White;
-            //}
-            //catch
-            //{
-            //    if (Convert.ToInt64(PhoneTextBox.Text) > 15)
-            //    {
-            //        PhoneTextBox.ForeColor = Color.LightPink;
-            //    }
-            //}
+            try
+            {
+                _contact.PhoneNumber.Number = Convert.ToInt64(PhoneTextBox.Text);
+                _phoneNumberError = "";
+                if ((_contact.PhoneNumber.Number < 70000000000) && (_contact.PhoneNumber.Number > 7999999999))
+                {
+                    PhoneTextBox.BackColor = Color.White;
+                }
+            }
+            catch (ArgumentException exception)
+            {
+                PhoneTextBox.BackColor = Color.LightPink;
+                _phoneNumberError = exception.Message;
+            }
         }
 
+        /// <summary>
+        /// Проверка правильности введенного имени.
+        /// </summary> 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _contact.Name = NameTextBox.Text;
+                _nameError = "";
+                if (_contact.Name.Length < 50)
+                {
+                    NameTextBox.BackColor = Color.White;
+                }
+            }
+            catch (ArgumentException exception)
+            {
+                NameTextBox.BackColor = Color.LightPink;
+                _nameError = exception.Message;
+            }
         }
 
+        /// <summary>
+        /// Проверка правильности введенного id vk.
+        /// </summary> 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _contact.IdVk = VkComTextBox.Text;
+                _idVkError = "";
+                if (_contact.IdVk.Length < 15)
+                {
+                    VkComTextBox.BackColor = Color.White;
+                }
+            }
+            catch (ArgumentException exception)
+            {
+                VkComTextBox.BackColor = Color.LightPink;
+                _idVkError = exception.Message;
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -121,7 +246,11 @@ namespace ContactsApp.View.Resources
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            Close();
+            CheckFromOnErrors();
+            if (CheckFromOnErrors() == true)
+            {
+                Close();
+            }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

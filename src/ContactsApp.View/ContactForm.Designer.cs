@@ -59,6 +59,7 @@ namespace ContactsApp.View.Resources
             // DateOfBirthTimePicker
             // 
             this.DateOfBirthTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.DateOfBirthTimePicker.CalendarMonthBackground = System.Drawing.SystemColors.HighlightText;
             this.DateOfBirthTimePicker.Location = new System.Drawing.Point(113, 69);
             this.DateOfBirthTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DateOfBirthTimePicker.Name = "DateOfBirthTimePicker";

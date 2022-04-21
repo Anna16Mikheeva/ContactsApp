@@ -166,7 +166,7 @@ namespace ContactsApp.Model
         {
             Surname = surname;
             Name = name;
-            _phoneNumber.Number = phoneNumber;
+            new PhoneNumber(phoneNumber);
             DateOfBirth = dateOfBirth;
             Email = email;
             IdVk = idVk;
