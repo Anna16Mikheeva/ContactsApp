@@ -34,7 +34,18 @@ namespace ContactsApp.View.Resources
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            try
+            {
+                _contact.Surname = SurnameTextBox.Text;
+                SurnameTextBox.BackColor = Color.White;
+            }
+            catch
+            {
+                if (_contact.Surname.Length > 2)
+                {
+                    SurnameTextBox.BackColor = Color.Red;
+                }
+            }
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -49,7 +60,18 @@ namespace ContactsApp.View.Resources
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-
+            //try
+            //{
+            //    _contact.PhoneNumber = Convert.ToInt64(PhoneTextBox.Text);
+            //    PhoneTextBox.ForeColor = Color.White;
+            //}
+            //catch
+            //{
+            //    if (Convert.ToInt64(PhoneTextBox.Text) > 15)
+            //    {
+            //        PhoneTextBox.ForeColor = Color.LightPink;
+            //    }
+            //}
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

@@ -60,7 +60,6 @@ namespace ContactsApp.View
             string[] arrayIdVk = { "193179578", "fgth2145", "589632100", "op4578963", "745896320",
                                    "afrt12458", "458963215", "457896301", "521003699", "458796320"};
             
-            Console.WriteLine(arraySurname[rand.Next(0, arraySurname.Length - 1)]); 
             _project.Contacts.Add(new Contact(arraySurname[rand.Next(0, arraySurname.Length - 1)], 
                                   arrayName[rand.Next(0, arraySurname.Length - 1)], 
                                   arrayNumber[rand.Next(0, arraySurname.Length - 1)], 
