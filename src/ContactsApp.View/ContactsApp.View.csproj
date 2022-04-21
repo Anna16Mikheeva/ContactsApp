@@ -36,7 +36,8 @@
     <ApplicationIcon>Resources\favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ContactsApp.Model">
+    <Reference Include="ContactsApp.Model, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ContactsApp.Model\bin\Debug\ContactsApp.Model.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Build" />

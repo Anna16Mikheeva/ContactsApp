@@ -14,13 +14,12 @@ namespace ContactsApp.View
 {
     public partial class MainForm : Form
     {
-       private Project _project = new Project();
+        private Project _project = new Project();
         public MainForm()
         {
             InitializeComponent();
 
         }
-
 
         /// <summary>
         /// Очищает ContsctsListBox и добавляет данные из коллекции.
@@ -47,11 +46,11 @@ namespace ContactsApp.View
                                       "Merkulov", "volkov", "Savchina", "Drey", "Simakov"};
             string[] arrayName = {"Kirill", "Anastasia", "Mikhail", "Lilya", "Dmitriy",
                                   "Andrey", "Evgeniy", "Julia", "Ekaterina", "Yuri"};
-            PhoneNumber[] arrayNumber = { new PhoneNumber(79521581576), new PhoneNumber(79234485215),
-                                          new PhoneNumber(78925601475), new PhoneNumber(78513694258), 
-                                          new PhoneNumber(71504698720), new PhoneNumber(78415620748),
-                                          new PhoneNumber(79521581045), new PhoneNumber(79501432289), 
-                                          new PhoneNumber(778955142001), new PhoneNumber(74120036555)};
+            long[] arrayNumber = { 79521581576, 79234485215,
+                                          78925601475, 78513694258, 
+                                          71504698720, 78415620748,
+                                          79521581045, 79501432289, 
+                                          78955142001, 74120036555};
             DateTime date = new DateTime(rand.Next(1900, DateTime.Now.Year), rand.Next(1, 12), 
                                          rand.Next(1, 31));
             string[] arrayEmail = {"kivbic@gmail.com", "ejjf18mf@yandex.ru", "hy6k89@mail.ru", 
@@ -113,8 +112,8 @@ namespace ContactsApp.View
             {
                 SurnameTextBox.Text = "";
                 NameTextBox.Text = "";
-                DateOfBirthDateTimePicker.Value = DateTime.Now;
-                //PhoneTextBox.Text = "";
+                DateOfBirthTimePicker.Value = DateTime.Now;
+                PhoneTextBox.Text = "";
                 EmailTextBox.Text = "";
                 VkComTextBox.Text = "";
             }
@@ -122,8 +121,8 @@ namespace ContactsApp.View
             {
                 SurnameTextBox.Text = _project.Contacts[index].Surname;
                 NameTextBox.Text = _project.Contacts[index].Name;
-                DateOfBirthDateTimePicker.Value = _project.Contacts[index].DateOfBirth;
-                //PhoneTextBox.Text = _project.Contacts[index].PhoneNumber;
+                DateOfBirthTimePicker.Value = _project.Contacts[index].DateOfBirth;
+                PhoneTextBox.Text = Convert.ToString(_project.Contacts[index].PhoneNumber);
                 EmailTextBox.Text = _project.Contacts[index].Email;
                 VkComTextBox.Text = _project.Contacts[index].IdVk;
             }
@@ -131,7 +130,7 @@ namespace ContactsApp.View
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Convert.ToString(_project.Contacts[index].PhoneNumber);
+           
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -275,6 +274,11 @@ namespace ContactsApp.View
         }
 
         private void aboutToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

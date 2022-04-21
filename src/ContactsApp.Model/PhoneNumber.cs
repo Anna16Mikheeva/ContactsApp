@@ -37,10 +37,12 @@ namespace ContactsApp.Model
             }
         }
 
+        /// <summary>
+        /// Создает экземпляр <see cref="PhoneNumber">.
+        /// </summary> 
         public PhoneNumber(long number)
         {
             Number = number;
         }
     }
-
 }

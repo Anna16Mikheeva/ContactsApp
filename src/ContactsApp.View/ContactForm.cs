@@ -1,4 +1,5 @@
-﻿using ContactsApp.View.Resources;
+﻿using ContactsApp.Model;
+using ContactsApp.View.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,19 @@ namespace ContactsApp.View.Resources
         public ContactForm()
         {
             InitializeComponent();
+            UpdateForm();
+        }
+        private Contact _contact = new Contact("Ivanov", "Petr", 78965412300, new DateTime(1999, 2, 12), "fdvdf169fgfgfg@gmail.com", "158963578");
+        
+        
+        private void UpdateForm()
+        {
+            SurnameTextBox.Text = _contact.Surname;
+            NameTextBox.Text = _contact.Name;
+            DateOfBirthTimePicker.Value = _contact.DateOfBirth;
+            PhoneTextBox.Text = Convert.ToString(_contact.PhoneNumber);
+            EmailTextBox.Text = _contact.Email;
+            VkComTextBox.Text = _contact.IdVk;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

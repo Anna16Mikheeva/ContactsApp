@@ -159,10 +159,14 @@ namespace ContactsApp.Model
             }
         }
 
-        public Contact(string surname, string name, PhoneNumber phoneNumber, DateTime dateOfBirth, string email, string idVk)
+        /// <summary>
+        /// Создает экземпляр <see cref="Contact">.
+        /// </summary> 
+        public Contact(string surname, string name, long phoneNumber, DateTime dateOfBirth, string email, string idVk)
         {
             Surname = surname;
             Name = name;
+            _phoneNumber.Number = phoneNumber;
             DateOfBirth = dateOfBirth;
             Email = email;
             IdVk = idVk;
