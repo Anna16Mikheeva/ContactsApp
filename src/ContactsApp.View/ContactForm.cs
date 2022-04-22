@@ -157,7 +157,7 @@ namespace ContactsApp.View.Resources
                 _phoneNumberError = "";
                 if ((_contact.PhoneNumber.Number >= 70000000000) && 
                     (_contact.PhoneNumber.Number <= 79999999999))
-                {
+                { 
                     PhoneTextBox.BackColor = Color.White;
                 }
             }
