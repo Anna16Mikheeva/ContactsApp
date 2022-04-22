@@ -59,7 +59,8 @@ namespace ContactsApp.Model
             {
                 if (value.Length > 50)
                 {
-                    throw new ArgumentException($"Surname must be no longer than 50 letters." + $"But was {value}");
+                    throw new ArgumentException($"Surname must be no longer than 50 letters." 
+                                                + $"But was {value.Length}");
                 }
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 _surname = textInfo.ToTitleCase(value);
@@ -79,7 +80,8 @@ namespace ContactsApp.Model
             {
                 if (value.Length > 50)
                 {
-                    throw new ArgumentException($"Name must be no longer than 50 letters." + $"But was {value}");
+                    throw new ArgumentException($"Name must be no longer than 50 letters." 
+                                                + $"But was {value.Length}");
                 }
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
                 _name = textInfo.ToTitleCase(value);
@@ -90,11 +92,15 @@ namespace ContactsApp.Model
         /// <summary>
         /// Возвращает номер телефона.
         /// </summary>
-        public PhoneNumber PhoneNumber
+        public PhoneNumber @PhoneNumber
         {
             get
             {
                 return _phoneNumber;
+            }
+            set
+            {
+                _phoneNumber = value;
             }
         }
 
@@ -111,11 +117,13 @@ namespace ContactsApp.Model
             {
                 if (value.Year < 1900)
                 {
-                    throw new ArgumentException($"Year of birth cannot be less than 1900." + $"But was {value}");
+                    throw new ArgumentException($"Year of birth cannot be less than 1900." 
+                                                + $"But was {value}");
                 }
                 if(value.Date > DateTime.Now)
                 {
-                    throw new ArgumentException($"Date of birth cannot be later than today." + $"But was {value}");
+                    throw new ArgumentException($"Date of birth cannot be later than today." 
+                                                + $"But was {value}");
                 }
                 _dateOfBirth = value;
             }
@@ -134,7 +142,8 @@ namespace ContactsApp.Model
             {
                 if (value.Length > 50   )
                 {
-                    throw new ArgumentException($"Name must be no longer than 50 letters." + $"But was {value}");
+                    throw new ArgumentException($"Name must be no longer than 50 letters." 
+                                                + $"But was {value.Length}");
                 }
                 _email = value;
             }
@@ -153,7 +162,8 @@ namespace ContactsApp.Model
             {
                 if (value.Length > 15)
                 {
-                    throw new ArgumentException($"Id must be no longer than 15 letters." + $"But was {value}");
+                    throw new ArgumentException($"Id must be no longer than 15 letters." 
+                                                + $"But was {value.Length}");
                 }
                 _idVk = value;
             }
@@ -162,11 +172,13 @@ namespace ContactsApp.Model
         /// <summary>
         /// Создает экземпляр <see cref="Contact">.
         /// </summary> 
-        public Contact(string surname, string name, long phoneNumber, DateTime dateOfBirth, string email, string idVk)
+        public Contact(string surname, string name, long phoneNumber, DateTime dateOfBirth,
+                       string email, string idVk)
         {
             Surname = surname;
             Name = name;
-            new PhoneNumber(phoneNumber);
+            PhoneNumber phone = new PhoneNumber(phoneNumber);
+            @PhoneNumber = phone;
             DateOfBirth = dateOfBirth;
             Email = email;
             IdVk = idVk;

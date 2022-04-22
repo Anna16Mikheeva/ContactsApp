@@ -46,11 +46,11 @@ namespace ContactsApp.View
                                       "Merkulov", "volkov", "Savchina", "Drey", "Simakov"};
             string[] arrayName = {"Kirill", "Anastasia", "Mikhail", "Lilya", "Dmitriy",
                                   "Andrey", "Evgeniy", "Julia", "Ekaterina", "Yuri"};
-            long[] arrayNumber = { 79521581576, 79234485215,
-                                          78925601475, 78513694258, 
-                                          71504698720, 78415620748,
-                                          79521581045, 79501432289, 
-                                          78955142001, 74120036555};
+            long[] arrayNumber = { 79521581576, 75963214585,
+                                   76964368906, 79876543212,
+                                   78765679007, 71209657438,
+                                   79521589876, 77654321234,
+                                   70000000001, 75454455667};
             DateTime date = new DateTime(rand.Next(1900, DateTime.Now.Year), rand.Next(1, 12), 
                                          rand.Next(1, 31));
             string[] arrayEmail = {"kivbic@gmail.com", "ejjf18mf@yandex.ru", "hy6k89@mail.ru", 
@@ -58,14 +58,13 @@ namespace ContactsApp.View
                                    "anas89sia@yandex.ru", "olga12orlova@gmail.com",
                                    "yup.rty@mail.ru", "yrjhnf.67.tyutu@gmail.com"};
             string[] arrayIdVk = { "193179578", "fgth2145", "589632100", "op4578963", "745896320",
-                                   "afrt12458", "458963215", "457896301", "521003699", "458796320"};
+                                 "afrt12458", "458963215", "457896301", "521003699", "458796320"};
             
             _project.Contacts.Add(new Contact(arraySurname[rand.Next(0, arraySurname.Length - 1)], 
-                                  arrayName[rand.Next(0, arraySurname.Length - 1)], 
+                                  arrayName[rand.Next(0, arraySurname.Length - 1)],
                                   arrayNumber[rand.Next(0, arraySurname.Length - 1)], 
                                   date, arrayEmail[rand.Next(0, arraySurname.Length - 1)], 
                                   arrayIdVk[rand.Next(0, arraySurname.Length - 1)]));
-
         }
 
         /// <summary>
@@ -121,7 +120,7 @@ namespace ContactsApp.View
                 SurnameTextBox.Text = _project.Contacts[index].Surname;
                 NameTextBox.Text = _project.Contacts[index].Name;
                 DateOfBirthTimePicker.Value = _project.Contacts[index].DateOfBirth;
-                PhoneTextBox.Text = Convert.ToString(_project.Contacts[index].PhoneNumber);
+                PhoneTextBox.Text = Convert.ToString(_project.Contacts[index].PhoneNumber.Number);
                 EmailTextBox.Text = _project.Contacts[index].Email;
                 VkComTextBox.Text = _project.Contacts[index].IdVk;
             }
@@ -183,8 +182,8 @@ namespace ContactsApp.View
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Resources.ContactForm contactForm = new Resources.ContactForm();
-            contactForm.Show();
+            //Resources.ContactForm contactForm = new Resources.ContactForm();
+            //contactForm.Show();
             AddContact();
             UpdateListBox();
         }

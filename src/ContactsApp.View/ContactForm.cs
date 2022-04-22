@@ -37,7 +37,7 @@ namespace ContactsApp.View.Resources
             SurnameTextBox.Text = _contact.Surname;
             NameTextBox.Text = _contact.Name;
             DateOfBirthTimePicker.Value = _contact.DateOfBirth;
-            PhoneTextBox.Text = Convert.ToString(_contact.PhoneNumber);
+            PhoneTextBox.Text = Convert.ToString(_contact.PhoneNumber.Number);
             EmailTextBox.Text = _contact.Email;
             VkComTextBox.Text = _contact.IdVk;
         }
@@ -83,10 +83,10 @@ namespace ContactsApp.View.Resources
                 {
                     MessageBox.Show(_nameError);
                 }
-                //if (_phoneNumberError != "")
-                //{
-                //    MessageBox.Show(_phoneNumberError);
-                //}
+                if (_phoneNumberError != "")
+                {
+                    MessageBox.Show(_phoneNumberError);
+                }
                 if (_birthOfDateError != "")
                 {
                     MessageBox.Show(_birthOfDateError);
@@ -153,9 +153,10 @@ namespace ContactsApp.View.Resources
         {
             try
             {
-                _contact.PhoneNumber.Number = Convert.ToInt64(PhoneTextBox.Text);
+                _contact.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
                 _phoneNumberError = "";
-                if ((_contact.PhoneNumber.Number < 70000000000) && (_contact.PhoneNumber.Number > 7999999999))
+                if ((_contact.PhoneNumber.Number >= 70000000000) && 
+                    (_contact.PhoneNumber.Number <= 79999999999))
                 {
                     PhoneTextBox.BackColor = Color.White;
                 }
@@ -246,7 +247,6 @@ namespace ContactsApp.View.Resources
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            CheckFromOnErrors();
             if (CheckFromOnErrors() == true)
             {
                 Close();
