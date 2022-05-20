@@ -59,7 +59,7 @@ namespace ContactsApp.Model
             {
                 if (value.Length > 50)
                 {
-                    throw new ArgumentException($"Surname must be no longer than 50 letters." 
+                    throw new ArgumentException($"Surname must be no longer than 50 letters."
                                                 + $"But was {value.Length}. ");
                 }
                 TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
