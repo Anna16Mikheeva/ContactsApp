@@ -15,10 +15,10 @@ namespace ContactsApp.View
     public partial class MainForm : Form
     {
         private Project _project = new Project();
+
         public MainForm()
         {
             InitializeComponent();
-
         }
 
         /// <summary>
@@ -27,11 +27,10 @@ namespace ContactsApp.View
         private void UpdateListBox()
         {
             ContactsListBox.Items.Clear();
-            for(int i=0;i<_project.Contacts.Count;i++)
+            for(int i=0;i < _project.Contacts.Count;i++)
             {
                ContactsListBox.Items.Add(_project.Contacts[i].Surname);
             }
-            
         }
 
         /// <summary>
@@ -76,26 +75,23 @@ namespace ContactsApp.View
             //иначе выодит диалоговое окно.
             if (index == -1)
             {
-
+                return;
             }
-            else
+
+            //Вывод диалогового окна при удалении контакта.
+            DialogResult result = MessageBox.Show(
+            "Do you really want to remove " + $"{_project.Contacts[index].Surname}?",
+            "Message",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1);
+            if (result == DialogResult.Yes)
             {
-                //Вывод диалогового окна при удалении контакта.
-                DialogResult result = MessageBox.Show(
-                "$Do you really want to remove " + $"{_project.Contacts[index].Surname}?",
-                "Message",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Information,
-                MessageBoxDefaultButton.Button1,
-                MessageBoxOptions.DefaultDesktopOnly);
-                if (result == DialogResult.Yes)
-                {
-                    //Удаление контакта из ContactsListBox.
-                    ContactsListBox.Items.RemoveAt(index);
-                    //Удаление контакта из коллекции.
-                    _project.Contacts.RemoveAt(index);
-                    //ContactsListBox.SelectedIndex++;
-                }
+                //Удаление контакта из ContactsListBox.
+                ContactsListBox.Items.RemoveAt(index);
+                //Удаление контакта из коллекции.
+                _project.Contacts.RemoveAt(index);
+                //ContactsListBox.SelectedIndex++;
             }
         }
 
@@ -117,73 +113,18 @@ namespace ContactsApp.View
             }
             else
             {
-                SurnameTextBox.Text = _project.Contacts[index].Surname;
-                NameTextBox.Text = _project.Contacts[index].Name;
-                DateOfBirthTimePicker.Value = _project.Contacts[index].DateOfBirth;
-                PhoneTextBox.Text = Convert.ToString(_project.Contacts[index].PhoneNumber.Number);
-                EmailTextBox.Text = _project.Contacts[index].Email;
-                VkComTextBox.Text = _project.Contacts[index].IdVk;
+                var contact = _project.Contacts[index];
+                SurnameTextBox.Text = contact.Surname;
+                NameTextBox.Text = contact.Name;
+                DateOfBirthTimePicker.Value = contact.DateOfBirth;
+                PhoneTextBox.Text = Convert.ToString(contact.PhoneNumber.Number);
+                EmailTextBox.Text = contact.Email;
+                VkComTextBox.Text = contact.IdVk;
             }
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            //Resources.ContactForm contactForm = new Resources.ContactForm();
-            //contactForm.Show();
             AddContact();
             UpdateListBox();
         }
@@ -197,13 +138,6 @@ namespace ContactsApp.View
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             RemoveContact(ContactsListBox.SelectedIndex);
-
-        }
-
-        private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            AboutForm aboutForm = new AboutForm();
-            aboutForm.Show();
         }
 
         private void addContactToolStripMenuItem_Click(object sender, EventArgs e)
@@ -218,31 +152,6 @@ namespace ContactsApp.View
         {
             ContactForm contactForm = new ContactForm();
             contactForm.Show();
-        }
-
-        private void SurnameLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FindTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FindLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void VkComTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NameLable_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void removeContactToolStripMenuItem_Click(object sender, EventArgs e)
@@ -263,22 +172,17 @@ namespace ContactsApp.View
             "Message",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Information,
-            MessageBoxDefaultButton.Button1,
-            MessageBoxOptions.DefaultDesktopOnly);
+            MessageBoxDefaultButton.Button1);
             if(result == DialogResult.Yes)
             {
                 Close();
             }
         }
 
-        private void aboutToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
-        {
-
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.Show();
         }
     }
 }

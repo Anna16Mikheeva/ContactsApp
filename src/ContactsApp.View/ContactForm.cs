@@ -51,10 +51,7 @@ namespace ContactsApp.View.Resources
             {
                 _contact.Surname = SurnameTextBox.Text;
                 _surnameError = "";
-                if (_contact.Surname.Length < 50)
-                {
-                    SurnameTextBox.BackColor = Color.White;
-                }
+                SurnameTextBox.BackColor = Color.White;
             }
             catch(ArgumentException exception)
             {
@@ -68,8 +65,9 @@ namespace ContactsApp.View.Resources
         /// </summary> 
         private bool CheckFromOnErrors()
         {
-            if ((_surnameError == "") && (_nameError == "") && (_phoneNumberError == "")
-                && (_birthOfDateError == "") && (_emailError == "") && (_idVkError == ""))
+            string Error = "";
+            if ((_surnameError == "") && (_nameError == "") && (_birthOfDateError == "") &&
+            (_phoneNumberError == "") && (_emailError == "") && (_idVkError == ""))
             {
                 return true;
             }
@@ -77,28 +75,32 @@ namespace ContactsApp.View.Resources
             {
                 if (_surnameError != "")
                 {
-                    MessageBox.Show(_surnameError);
+                    Error += _surnameError;
                 }
                 if (_nameError != "")
                 {
-                    MessageBox.Show(_nameError);
-                }
-                if (_phoneNumberError != "")
-                {
-                    MessageBox.Show(_phoneNumberError);
+                    Error += _nameError;
                 }
                 if (_birthOfDateError != "")
                 {
-                    MessageBox.Show(_birthOfDateError);
+                    Error += _birthOfDateError;
+                }
+                if (_phoneNumberError != "")
+                {
+                    Error += _phoneNumberError;
                 }
                 if (_emailError != "")
                 {
-                    MessageBox.Show(_emailError);
+                    Error += _emailError;
                 }
                 if (_idVkError != "")
                 {
-                    MessageBox.Show(_idVkError);
+                    Error += _idVkError;
                 }
+                MessageBox.Show(Error, "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                Error = "";
                 return false;
             }
         }
@@ -113,10 +115,7 @@ namespace ContactsApp.View.Resources
             {
                 _contact.DateOfBirth = DateOfBirthTimePicker.Value;
                 _birthOfDateError = "";
-                if (_contact.DateOfBirth.Year > 1900)
-                {
-                    DateOfBirthTimePicker.BackColor = Color.White;
-                }
+                DateOfBirthTimePicker.BackColor = Color.White;
             }
             catch (ArgumentException exception)
             {
@@ -134,10 +133,7 @@ namespace ContactsApp.View.Resources
             {
                 _contact.Email = EmailTextBox.Text;
                 _emailError = "";
-                if (_contact.Email.Length < 50)
-                {
-                    EmailTextBox.BackColor = Color.White;
-                }
+                EmailTextBox.BackColor = Color.White;
             }
             catch (ArgumentException exception)
             {
@@ -155,11 +151,7 @@ namespace ContactsApp.View.Resources
             {
                 _contact.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
                 _phoneNumberError = "";
-                if ((_contact.PhoneNumber.Number >= 70000000000) && 
-                    (_contact.PhoneNumber.Number <= 79999999999))
-                { 
-                    PhoneTextBox.BackColor = Color.White;
-                }
+                PhoneTextBox.BackColor = Color.White;
             }
             catch (ArgumentException exception)
             {
@@ -177,10 +169,7 @@ namespace ContactsApp.View.Resources
             {
                 _contact.Name = NameTextBox.Text;
                 _nameError = "";
-                if (_contact.Name.Length < 50)
-                {
-                    NameTextBox.BackColor = Color.White;
-                }
+                NameTextBox.BackColor = Color.White;
             }
             catch (ArgumentException exception)
             {
@@ -198,10 +187,7 @@ namespace ContactsApp.View.Resources
             {
                 _contact.IdVk = VkComTextBox.Text;
                 _idVkError = "";
-                if (_contact.IdVk.Length < 15)
-                {
-                    VkComTextBox.BackColor = Color.White;
-                }
+                VkComTextBox.BackColor = Color.White;
             }
             catch (ArgumentException exception)
             {
@@ -210,45 +196,21 @@ namespace ContactsApp.View.Resources
             }
         }
 
-        private void label7_Click(object sender, EventArgs e)
+        private void UpdateContact()
         {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormEdit_Load(object sender, EventArgs e)
-        {
-
+            _contact.Surname = SurnameTextBox.Text;
+            _contact.Name = NameTextBox.Text;
+            _contact.DateOfBirth = DateOfBirthTimePicker.Value;
+            _contact.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
+            _contact.Email = EmailTextBox.Text;
+            _contact.IdVk = VkComTextBox.Text;
         }
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            if (CheckFromOnErrors() == true)
+            if (CheckFromOnErrors())
             {
+                UpdateContact();
                 Close();
             }
         }

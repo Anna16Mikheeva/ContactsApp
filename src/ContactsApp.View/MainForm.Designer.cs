@@ -71,7 +71,7 @@ namespace ContactsApp.View
             this.ContactMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ContactMenuStrip.Name = "ContactMenuStrip";
             this.ContactMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.ContactMenuStrip.Size = new System.Drawing.Size(157, 28);
+            this.ContactMenuStrip.Size = new System.Drawing.Size(307, 28);
             this.ContactMenuStrip.TabIndex = 38;
             this.ContactMenuStrip.Text = "menuStrip1";
             // 
@@ -82,7 +82,6 @@ namespace ContactsApp.View
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
             this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(46, 24);
             this.aboutToolStripMenuItem1.Text = "File";
-            this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click_1);
             // 
             // helpToolStripMenuItem1
             // 
@@ -133,9 +132,10 @@ namespace ContactsApp.View
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click_1);
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.aboutToolStripMenuItem.TextChanged += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // FindLabel
             // 
@@ -145,7 +145,6 @@ namespace ContactsApp.View
             this.FindLabel.Size = new System.Drawing.Size(39, 17);
             this.FindLabel.TabIndex = 25;
             this.FindLabel.Text = "Find:";
-            this.FindLabel.Click += new System.EventHandler(this.FindLabel_Click);
             // 
             // VkComLable
             // 
@@ -173,7 +172,6 @@ namespace ContactsApp.View
             this.SurnameTextBox.ReadOnly = true;
             this.SurnameTextBox.Size = new System.Drawing.Size(461, 22);
             this.SurnameTextBox.TabIndex = 39;
-            this.SurnameTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // DateOfBirthTimePicker
             // 
@@ -201,7 +199,6 @@ namespace ContactsApp.View
             this.NameTextBox.ReadOnly = true;
             this.NameTextBox.Size = new System.Drawing.Size(461, 22);
             this.NameTextBox.TabIndex = 40;
-            this.NameTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // BirthdayLabel
             // 
@@ -221,7 +218,6 @@ namespace ContactsApp.View
             this.PhoneTextBox.ReadOnly = true;
             this.PhoneTextBox.Size = new System.Drawing.Size(460, 22);
             this.PhoneTextBox.TabIndex = 41;
-            this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
             // 
             // NameLable
             // 
@@ -230,7 +226,6 @@ namespace ContactsApp.View
             this.NameLable.Size = new System.Drawing.Size(51, 17);
             this.NameLable.TabIndex = 27;
             this.NameLable.Text = "Name:";
-            this.NameLable.Click += new System.EventHandler(this.NameLable_Click);
             // 
             // EmailTextBox
             // 
@@ -251,7 +246,6 @@ namespace ContactsApp.View
             this.SurnameLabel.Size = new System.Drawing.Size(69, 17);
             this.SurnameLabel.TabIndex = 26;
             this.SurnameLabel.Text = "Surname:";
-            this.SurnameLabel.Click += new System.EventHandler(this.SurnameLabel_Click);
             // 
             // VkComTextBox
             // 
@@ -263,7 +257,6 @@ namespace ContactsApp.View
             this.VkComTextBox.ReadOnly = true;
             this.VkComTextBox.Size = new System.Drawing.Size(461, 22);
             this.VkComTextBox.TabIndex = 43;
-            this.VkComTextBox.TextChanged += new System.EventHandler(this.VkComTextBox_TextChanged);
             // 
             // FindTextBox
             // 
@@ -272,7 +265,6 @@ namespace ContactsApp.View
             this.FindTextBox.Name = "FindTextBox";
             this.FindTextBox.Size = new System.Drawing.Size(223, 22);
             this.FindTextBox.TabIndex = 32;
-            this.FindTextBox.TextChanged += new System.EventHandler(this.FindTextBox_TextChanged);
             // 
             // ContactsListBox
             // 
@@ -292,7 +284,7 @@ namespace ContactsApp.View
             // 
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AddButton.BackColor = System.Drawing.SystemColors.Control;
-            this.AddButton.BackgroundImage = global::ContactsApp.View.Properties.Resources.Add;
+            this.AddButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddButton.BackgroundImage")));
             this.AddButton.FlatAppearance.BorderSize = 0;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Location = new System.Drawing.Point(12, 459);
@@ -306,7 +298,7 @@ namespace ContactsApp.View
             // DeleteButton
             // 
             this.DeleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.DeleteButton.BackgroundImage = global::ContactsApp.View.Properties.Resources.Delete;
+            this.DeleteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DeleteButton.BackgroundImage")));
             this.DeleteButton.FlatAppearance.BorderSize = 0;
             this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteButton.Location = new System.Drawing.Point(104, 459);
@@ -320,7 +312,7 @@ namespace ContactsApp.View
             // EditButton
             // 
             this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.EditButton.BackgroundImage = global::ContactsApp.View.Properties.Resources.Edit1;
+            this.EditButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EditButton.BackgroundImage")));
             this.EditButton.FlatAppearance.BorderSize = 0;
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Location = new System.Drawing.Point(59, 459);
@@ -361,7 +353,6 @@ namespace ContactsApp.View
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ContactsApp";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ContactMenuStrip.ResumeLayout(false);
             this.ContactMenuStrip.PerformLayout();
             this.ResumeLayout(false);

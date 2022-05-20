@@ -116,7 +116,6 @@ namespace ContactsApp.View.Resources
             this.VkComLabel.Size = new System.Drawing.Size(56, 17);
             this.VkComLabel.TabIndex = 19;
             this.VkComLabel.Text = "vk.com:";
-            this.VkComLabel.Click += new System.EventHandler(this.label7_Click);
             // 
             // EmailLabel
             // 
@@ -127,7 +126,6 @@ namespace ContactsApp.View.Resources
             this.EmailLabel.Size = new System.Drawing.Size(51, 17);
             this.EmailLabel.TabIndex = 18;
             this.EmailLabel.Text = "E-mail:";
-            this.EmailLabel.Click += new System.EventHandler(this.label6_Click);
             // 
             // PhoneLabel
             // 
@@ -138,7 +136,6 @@ namespace ContactsApp.View.Resources
             this.PhoneLabel.Size = new System.Drawing.Size(53, 17);
             this.PhoneLabel.TabIndex = 17;
             this.PhoneLabel.Text = "Phone:";
-            this.PhoneLabel.Click += new System.EventHandler(this.label5_Click);
             // 
             // DateOfBirthLabel
             // 
@@ -149,7 +146,6 @@ namespace ContactsApp.View.Resources
             this.DateOfBirthLabel.Size = new System.Drawing.Size(90, 17);
             this.DateOfBirthLabel.TabIndex = 16;
             this.DateOfBirthLabel.Text = "Date of birth:";
-            this.DateOfBirthLabel.Click += new System.EventHandler(this.label4_Click);
             // 
             // NameLabel
             // 
@@ -160,7 +156,6 @@ namespace ContactsApp.View.Resources
             this.NameLabel.Size = new System.Drawing.Size(49, 17);
             this.NameLabel.TabIndex = 15;
             this.NameLabel.Text = "Name:";
-            this.NameLabel.Click += new System.EventHandler(this.label3_Click);
             // 
             // SurnameLabel
             // 
@@ -172,7 +167,6 @@ namespace ContactsApp.View.Resources
             this.SurnameLabel.Size = new System.Drawing.Size(69, 17);
             this.SurnameLabel.TabIndex = 14;
             this.SurnameLabel.Text = "Surname:";
-            this.SurnameLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // OkButton
             // 
@@ -222,7 +216,6 @@ namespace ContactsApp.View.Resources
             this.Name = "ContactForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add/Edit Contact";
-            this.Load += new System.EventHandler(this.FormEdit_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
