@@ -15,6 +15,7 @@ namespace ContactsApp.View
     public partial class MainForm : Form
     {
         private Project _project = new Project();
+        //ContactForm contactForm = new ContactForm();
 
         public MainForm()
         {
@@ -38,32 +39,14 @@ namespace ContactsApp.View
         /// </summary> 
         private void AddContact()
         {
-            // Создаем генератор случайных чисел.
-            Random rand = new Random();
-            //Создаем массивы данных.
-            string[] arraySurname = { "ivanov", "petrova", "Pereversev", "Osmanova", "Afanasev", 
-                                      "Merkulov", "volkov", "Savchina", "Drey", "Simakov"};
-            string[] arrayName = {"Kirill", "Anastasia", "Mikhail", "Lilya", "Dmitriy",
-                                  "Andrey", "Evgeniy", "Julia", "Ekaterina", "Yuri"};
-            long[] arrayNumber = { 79521581576, 75963214585,
-                                   76964368906, 79876543212,
-                                   78765679007, 71209657438,
-                                   79521589876, 77654321234,
-                                   70000000001, 75454455667};
-            DateTime date = new DateTime(rand.Next(1900, DateTime.Now.Year), rand.Next(1, 12), 
-                                         rand.Next(1, 31));
-            string[] arrayEmail = {"kivbic@gmail.com", "ejjf18mf@yandex.ru", "hy6k89@mail.ru", 
-                                   "ouy90.qr@gmail.com", "jfhfhj.78@yandex.ru", "op90tur@tusur.ru", 
-                                   "anas89sia@yandex.ru", "olga12orlova@gmail.com",
-                                   "yup.rty@mail.ru", "yrjhnf.67.tyutu@gmail.com"};
-            string[] arrayIdVk = { "193179578", "fgth2145", "589632100", "op4578963", "745896320",
-                                 "afrt12458", "458963215", "457896301", "521003699", "458796320"};
-            
-            _project.Contacts.Add(new Contact(arraySurname[rand.Next(0, arraySurname.Length - 1)], 
-                                  arrayName[rand.Next(0, arraySurname.Length - 1)],
-                                  arrayNumber[rand.Next(0, arraySurname.Length - 1)], 
-                                  date, arrayEmail[rand.Next(0, arraySurname.Length - 1)], 
-                                  arrayIdVk[rand.Next(0, arraySurname.Length - 1)]));
+            ContactForm contactForm = new ContactForm();
+            //contactForm.contact = null;
+            contactForm.ShowDialog();
+            //if (contactForm.Contact != null)
+            //{
+                _project.Contacts.Add(contactForm.Contact);
+            //}
+            UpdateListBox();
         }
 
         /// <summary>
@@ -131,8 +114,9 @@ namespace ContactsApp.View
 
         private void EditButton_Click(object sender, EventArgs e)
         {
+            EditContact(ContactsListBox.SelectedIndex);
             ContactForm contactForm = new ContactForm();
-            contactForm.Show();
+            contactForm.ShowDialog();
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
@@ -179,10 +163,55 @@ namespace ContactsApp.View
             }
         }
 
+        private void EditContact(int index)
+        {
+            if (index == -1)
+            {
+                return;
+            }
+            ContactForm contactForm = new ContactForm();
+            contactForm.Contact = _project.Contacts[index];
+            contactForm.ShowDialog();
+            //if (contactForm.Contact != null)
+            //{
+                _project.Contacts[index] = contactForm.Contact;
+            //}
+        }
+
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutForm aboutForm = new AboutForm();
             aboutForm.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //// Создаем генератор случайных чисел.
+            //Random rand = new Random();
+            ////Создаем массивы данных.
+            //string[] arraySurname = { "ivanov", "petrova", "Pereversev", "Osmanova", "Afanasev", 
+            //                          "Merkulov", "volkov", "Savchina", "Drey", "Simakov"};
+            //string[] arrayName = {"Kirill", "Anastasia", "Mikhail", "Lilya", "Dmitriy",
+            //                      "Andrey", "Evgeniy", "Julia", "Ekaterina", "Yuri"};
+            //long[] arrayNumber = { 79521581576, 75963214585,
+            //                       76964368906, 79876543212,
+            //                       78765679007, 71209657438,
+            //                       79521589876, 77654321234,
+            //                       70000000001, 75454455667};
+            //DateTime date = new DateTime(rand.Next(1900, DateTime.Now.Year), rand.Next(1, 12), 
+            //                             rand.Next(1, 31));
+            //string[] arrayEmail = {"kivbic@gmail.com", "ejjf18mf@yandex.ru", "hy6k89@mail.ru", 
+            //                       "ouy90.qr@gmail.com", "jfhfhj.78@yandex.ru", "op90tur@tusur.ru", 
+            //                       "anas89sia@yandex.ru", "olga12orlova@gmail.com",
+            //                       "yup.rty@mail.ru", "yrjhnf.67.tyutu@gmail.com"};
+            //string[] arrayIdVk = { "193179578", "fgth2145", "589632100", "op4578963", "745896320",
+            //                     "afrt12458", "458963215", "457896301", "521003699", "458796320"};
+
+            //_project.Contacts.Add(new Contact(arraySurname[rand.Next(0, arraySurname.Length - 1)], 
+            //                      arrayName[rand.Next(0, arraySurname.Length - 1)],
+            //                      arrayNumber[rand.Next(0, arraySurname.Length - 1)], 
+            //                      date, arrayEmail[rand.Next(0, arraySurname.Length - 1)], 
+            //                      arrayIdVk[rand.Next(0, arraySurname.Length - 1)]));
         }
     }
 }

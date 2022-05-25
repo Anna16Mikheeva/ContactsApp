@@ -120,7 +120,7 @@ namespace ContactsApp.Model
                     throw new ArgumentException($"Year of birth cannot be less than 1900." 
                                                 + $"But was {value}. ");
                 }
-                if(value.Date > DateTime.Now)
+                if(value.Date >= DateTime.Now)
                 {
                     throw new ArgumentException($"Date of birth cannot be later than today." 
                                                 + $"But was {value}. ");
@@ -169,6 +169,11 @@ namespace ContactsApp.Model
             }
         }
 
+        public Contact()
+        {
+
+        }
+
         /// <summary>
         /// Создает экземпляр <see cref="Contact">.
         /// </summary> 
@@ -182,6 +187,11 @@ namespace ContactsApp.Model
             DateOfBirth = dateOfBirth;
             Email = email;
             IdVk = idVk;
+        }
+
+        public object Clone()
+        {
+            return new Contact(Surname, Name, _phoneNumber.Number, DateOfBirth, Email, IdVk);
         }
     }
 }

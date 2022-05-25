@@ -223,19 +223,19 @@ namespace ContactsApp.View.Resources
 
         #endregion
 
-        private System.Windows.Forms.TextBox VkComTextBox;
-        private System.Windows.Forms.DateTimePicker DateOfBirthTimePicker;
-        private System.Windows.Forms.TextBox EmailTextBox;
-        private System.Windows.Forms.TextBox PhoneTextBox;
-        private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.TextBox SurnameTextBox;
-        private System.Windows.Forms.Label VkComLabel;
-        private System.Windows.Forms.Label EmailLabel;
-        private System.Windows.Forms.Label PhoneLabel;
-        private System.Windows.Forms.Label DateOfBirthLabel;
-        private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label SurnameLabel;
-        private System.Windows.Forms.Button OkButton;
-        private System.Windows.Forms.Button CancelButton;
+        public System.Windows.Forms.TextBox VkComTextBox;
+        public System.Windows.Forms.DateTimePicker DateOfBirthTimePicker;
+        public System.Windows.Forms.TextBox EmailTextBox;
+        public System.Windows.Forms.TextBox PhoneTextBox;
+        public System.Windows.Forms.TextBox NameTextBox;
+        public System.Windows.Forms.TextBox SurnameTextBox;
+        public System.Windows.Forms.Label VkComLabel;
+        public System.Windows.Forms.Label EmailLabel;
+        public System.Windows.Forms.Label PhoneLabel;
+        public System.Windows.Forms.Label DateOfBirthLabel;
+        public System.Windows.Forms.Label NameLabel;
+        public System.Windows.Forms.Label SurnameLabel;
+        public System.Windows.Forms.Button OkButton;
+        public System.Windows.Forms.Button CancelButton;
     }
 }

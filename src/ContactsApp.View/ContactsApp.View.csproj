@@ -117,5 +117,8 @@
     <None Include="Resources\Edit1.png" />
     <Content Include="Resources\favicon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

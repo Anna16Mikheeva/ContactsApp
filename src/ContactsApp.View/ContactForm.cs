@@ -19,27 +19,53 @@ namespace ContactsApp.View.Resources
             InitializeComponent();
             UpdateForm();
         }
-
+        
         /// <summary>
         /// Создание экземпляра класса Contact и заполнение данными.
         /// </summary> 
-        private Contact _contact = new Contact("Ivanov", "Petr", 78965412300, 
-                                   new DateTime(1999, 2, 12), "fdvdf169fgfgfg@gmail.com",
-                                   "158963578");
+        //private Contact _contact = new Contact("Ivanov", "Petr", 78965412300,
+        //                           new DateTime(1999, 2, 12), "fdvdf169fgfgfg@gmail.com",
+        //                           "158963578");
+        private Contact _contact = new Contact();
+        Contact _contactCopy = new Contact();
+
+        //Объявление переменных
         private string _surnameError, _nameError, _phoneNumberError, _birthOfDateError,
                        _emailError, _idVkError;
+        private Color colorWhite = Color.White, colorLightPink = Color.LightPink;
+
+        public Contact Contact
+        {
+            get
+            {
+                return _contact;
+            }
+            set
+            {
+                _contact = value;
+                if(_contact != null)
+                {
+                    _contactCopy = (Contact)_contact.Clone();
+                }
+                else
+                {
+                    _contactCopy = new Contact();
+                }
+                UpdateForm();
+            }
+        }
 
         /// <summary>
         /// Заполнение окна данными нового контакта.
         /// </summary> 
         private void UpdateForm()
         {
-            SurnameTextBox.Text = _contact.Surname;
-            NameTextBox.Text = _contact.Name;
-            DateOfBirthTimePicker.Value = _contact.DateOfBirth;
-            PhoneTextBox.Text = Convert.ToString(_contact.PhoneNumber.Number);
-            EmailTextBox.Text = _contact.Email;
-            VkComTextBox.Text = _contact.IdVk;
+            SurnameTextBox.Text = _contactCopy.Surname;
+            NameTextBox.Text = _contactCopy.Name;
+            DateOfBirthTimePicker.Value = _contactCopy.DateOfBirth;
+            PhoneTextBox.Text = Convert.ToString(_contactCopy.PhoneNumber.Number);
+            EmailTextBox.Text = _contactCopy.Email;
+            VkComTextBox.Text = _contactCopy.IdVk;
         }
 
         /// <summary>
@@ -49,7 +75,7 @@ namespace ContactsApp.View.Resources
         {
             try
             {
-                _contact.Surname = SurnameTextBox.Text;
+                _contactCopy.Surname = SurnameTextBox.Text;
                 _surnameError = "";
                 SurnameTextBox.BackColor = Color.White;
             }
@@ -110,16 +136,15 @@ namespace ContactsApp.View.Resources
         /// </summary> 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            DateOfBirthTimePicker.CalendarTitleBackColor = Color.Red;
             try
             {
-                _contact.DateOfBirth = DateOfBirthTimePicker.Value;
+                _contactCopy.DateOfBirth = DateOfBirthTimePicker.Value;
                 _birthOfDateError = "";
-                DateOfBirthTimePicker.BackColor = Color.White;
+                DateOfBirthTimePicker.BackColor = colorWhite;
             }
             catch (ArgumentException exception)
             {
-                DateOfBirthTimePicker.CalendarTitleBackColor = Color.LightPink;
+                DateOfBirthTimePicker.CalendarTitleBackColor = colorLightPink;
                 _birthOfDateError = exception.Message;
             }
         }
@@ -131,13 +156,13 @@ namespace ContactsApp.View.Resources
         {
             try
             {
-                _contact.Email = EmailTextBox.Text;
+                _contactCopy.Email = EmailTextBox.Text;
                 _emailError = "";
-                EmailTextBox.BackColor = Color.White;
+                EmailTextBox.BackColor = colorWhite;
             }
             catch (ArgumentException exception)
             {
-                EmailTextBox.BackColor = Color.LightPink;
+                EmailTextBox.BackColor = colorLightPink;
                 _emailError = exception.Message;
             }
         }
@@ -149,13 +174,13 @@ namespace ContactsApp.View.Resources
         {
             try
             {
-                _contact.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
+                _contactCopy.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
                 _phoneNumberError = "";
-                PhoneTextBox.BackColor = Color.White;
+                PhoneTextBox.BackColor = colorWhite;
             }
             catch (ArgumentException exception)
             {
-                PhoneTextBox.BackColor = Color.LightPink;
+                PhoneTextBox.BackColor = colorLightPink;
                 _phoneNumberError = exception.Message;
             }
         }
@@ -167,13 +192,13 @@ namespace ContactsApp.View.Resources
         {
             try
             {
-                _contact.Name = NameTextBox.Text;
+                _contactCopy.Name = NameTextBox.Text;
                 _nameError = "";
-                NameTextBox.BackColor = Color.White;
+                NameTextBox.BackColor = colorWhite;
             }
             catch (ArgumentException exception)
             {
-                NameTextBox.BackColor = Color.LightPink;
+                NameTextBox.BackColor = colorLightPink;
                 _nameError = exception.Message;
             }
         }
@@ -185,25 +210,25 @@ namespace ContactsApp.View.Resources
         {
             try
             {
-                _contact.IdVk = VkComTextBox.Text;
+                _contactCopy.IdVk = VkComTextBox.Text;
                 _idVkError = "";
-                VkComTextBox.BackColor = Color.White;
+                VkComTextBox.BackColor = colorWhite;
             }
             catch (ArgumentException exception)
             {
-                VkComTextBox.BackColor = Color.LightPink;
+                VkComTextBox.BackColor = colorLightPink;
                 _idVkError = exception.Message;
             }
         }
 
         private void UpdateContact()
         {
-            _contact.Surname = SurnameTextBox.Text;
-            _contact.Name = NameTextBox.Text;
-            _contact.DateOfBirth = DateOfBirthTimePicker.Value;
-            _contact.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
-            _contact.Email = EmailTextBox.Text;
-            _contact.IdVk = VkComTextBox.Text;
+            _contactCopy.Surname = SurnameTextBox.Text;
+            _contactCopy.Name = NameTextBox.Text;
+            _contactCopy.DateOfBirth = DateOfBirthTimePicker.Value;
+            _contactCopy.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
+            _contactCopy.Email = EmailTextBox.Text;
+            _contactCopy.IdVk = VkComTextBox.Text;
         }
 
         private void OkButton_Click(object sender, EventArgs e)
@@ -211,13 +236,14 @@ namespace ContactsApp.View.Resources
             if (CheckFromOnErrors())
             {
                 UpdateContact();
-                Close();
+                _contact = _contactCopy;
+                DialogResult = DialogResult.OK;
             }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult = DialogResult.Cancel;
         }
     }
 }
