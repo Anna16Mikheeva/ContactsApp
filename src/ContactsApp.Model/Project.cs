@@ -18,5 +18,21 @@ namespace ContactsApp.Model
         /// Возвращает или задает контакт.
         /// </summary>
         public List<Contact> Contacts { get; set; } = new List<Contact>();
+
+        /// <summary>
+        /// Сортировка контакта по алфавиту.
+        /// </summary>
+        public void SortContacts()
+        {
+
+        }
+
+        /// <summary>
+        /// Поиск контакта по дате рождения.
+        /// </summary>
+        public void SearchByDateOfirth()
+        {
+
+        }
     }
 }

@@ -62,12 +62,12 @@ namespace ContactsApp.View.Resources
         /// <summary>
         /// Переменнаая белого цвета. 
         /// </summary>  
-        private Color colorWhite = Color.White;
+        private Color _colorWhite = Color.White;
 
         /// <summary>
         /// Переменнаая розового цвета. 
         /// </summary>  
-        private Color colorLightPink = Color.LightPink;
+        private Color _colorLightPink = Color.LightPink;
 
         /// <summary>
         /// Возвращает или залает значение контакта
@@ -185,11 +185,11 @@ namespace ContactsApp.View.Resources
             {
                 _contactCopy.Name = NameTextBox.Text;
                 _nameError = "";
-                NameTextBox.BackColor = colorWhite;
+                NameTextBox.BackColor = _colorWhite;
             }
             catch (ArgumentException exception)
             {
-                NameTextBox.BackColor = colorLightPink;
+                NameTextBox.BackColor = _colorLightPink;
                 _nameError = exception.Message;
             }
         }
@@ -203,11 +203,11 @@ namespace ContactsApp.View.Resources
             {
                 _contactCopy.DateOfBirth = DateOfBirthTimePicker.Value;
                 _birthOfDateError = "";
-                DateOfBirthTimePicker.BackColor = colorWhite;
+                DateOfBirthTimePicker.BackColor = _colorWhite;
             }
             catch (ArgumentException exception)
             {
-                DateOfBirthTimePicker.CalendarTitleBackColor = colorLightPink;
+                DateOfBirthTimePicker.CalendarTitleBackColor = _colorLightPink;
                 _birthOfDateError = exception.Message;
             }
         }
@@ -221,11 +221,11 @@ namespace ContactsApp.View.Resources
             {
                 _contactCopy.Email = EmailTextBox.Text;
                 _emailError = "";
-                EmailTextBox.BackColor = colorWhite;
+                EmailTextBox.BackColor = _colorWhite;
             }
             catch (ArgumentException exception)
             {
-                EmailTextBox.BackColor = colorLightPink;
+                EmailTextBox.BackColor = _colorLightPink;
                 _emailError = exception.Message;
             }
         }
@@ -243,11 +243,11 @@ namespace ContactsApp.View.Resources
             {
                 _contactCopy.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
                 _phoneNumberError = "";
-                PhoneTextBox.BackColor = colorWhite;
+                PhoneTextBox.BackColor = _colorWhite;
             }
             catch (ArgumentException exception)
             {
-                PhoneTextBox.BackColor = colorLightPink;
+                PhoneTextBox.BackColor = _colorLightPink;
                 _phoneNumberError = exception.Message;
             }
         }
@@ -261,11 +261,11 @@ namespace ContactsApp.View.Resources
             {
                 _contactCopy.IdVk = VkComTextBox.Text;
                 _idVkError = "";
-                VkComTextBox.BackColor = colorWhite;
+                VkComTextBox.BackColor = _colorWhite;
             }
             catch (ArgumentException exception)
             {
-                VkComTextBox.BackColor = colorLightPink;
+                VkComTextBox.BackColor = _colorLightPink;
                 _idVkError = exception.Message;
             }
         }
