@@ -54,7 +54,7 @@ namespace ContactsApp.View.Resources
             this.VkComTextBox.Size = new System.Drawing.Size(345, 22);
             this.VkComTextBox.TabIndex = 25;
             this.VkComTextBox.Text = " ";
-            this.VkComTextBox.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.VkComTextBox.TextChanged += new System.EventHandler(this.IdVkTextBox_TextChanged);
             // 
             // DateOfBirthTimePicker
             // 
@@ -65,7 +65,7 @@ namespace ContactsApp.View.Resources
             this.DateOfBirthTimePicker.Name = "DateOfBirthTimePicker";
             this.DateOfBirthTimePicker.Size = new System.Drawing.Size(165, 22);
             this.DateOfBirthTimePicker.TabIndex = 24;
-            this.DateOfBirthTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.DateOfBirthTimePicker.ValueChanged += new System.EventHandler(this.BirthOfDateTimePicker_ValueChanged);
             // 
             // EmailTextBox
             // 
@@ -75,7 +75,7 @@ namespace ContactsApp.View.Resources
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(347, 22);
             this.EmailTextBox.TabIndex = 23;
-            this.EmailTextBox.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.EmailTextBox.TextChanged += new System.EventHandler(this.EmailTextBox_TextChanged);
             // 
             // PhoneTextBox
             // 
@@ -85,7 +85,7 @@ namespace ContactsApp.View.Resources
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(345, 22);
             this.PhoneTextBox.TabIndex = 22;
-            this.PhoneTextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
             // 
             // NameTextBox
             // 
@@ -95,7 +95,7 @@ namespace ContactsApp.View.Resources
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(345, 22);
             this.NameTextBox.TabIndex = 21;
-            this.NameTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // SurnameTextBox
             // 
@@ -105,7 +105,7 @@ namespace ContactsApp.View.Resources
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.Size = new System.Drawing.Size(345, 22);
             this.SurnameTextBox.TabIndex = 20;
-            this.SurnameTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.SurnameTextBox.TextChanged += new System.EventHandler(this.SurnameTextBox_TextChanged);
             // 
             // VkComLabel
             // 

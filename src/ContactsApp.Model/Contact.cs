@@ -29,12 +29,12 @@ namespace ContactsApp.Model
         /// <summary>
         /// Номер телефона.
         /// </summary>
-        private PhoneNumber _phoneNumber;
+        private PhoneNumber _phoneNumber = new PhoneNumber();
 
         /// <summary>
         /// Дата рождения контакта.
         /// </summary>
-        private DateTime _dateOfBirth;
+        private DateTime _dateOfBirth = DateTime.Now;
 
         /// <summary>
         /// E-mail контакта.

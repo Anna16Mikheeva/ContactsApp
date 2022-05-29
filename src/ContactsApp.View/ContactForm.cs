@@ -17,23 +17,61 @@ namespace ContactsApp.View.Resources
         public ContactForm()
         {
             InitializeComponent();
-            UpdateForm();
         }
         
         /// <summary>
-        /// Создание экземпляра класса Contact и заполнение данными.
-        /// </summary> 
-        //private Contact _contact = new Contact("Ivanov", "Petr", 78965412300,
-        //                           new DateTime(1999, 2, 12), "fdvdf169fgfgfg@gmail.com",
-        //                           "158963578");
-        private Contact _contact = new Contact();
-        Contact _contactCopy = new Contact();
+        /// Создание экземпляра класса Contact.
+        /// </summary>                         
+        private Contact _contact;
 
-        //Объявление переменных
-        private string _surnameError, _nameError, _phoneNumberError, _birthOfDateError,
-                       _emailError, _idVkError;
-        private Color colorWhite = Color.White, colorLightPink = Color.LightPink;
+        /// <summary>
+        /// Создание экземпляра копии класса Contact. 
+        /// </summary>  
+        private Contact _contactCopy;
 
+        /// <summary>
+        /// Содержит текст ошибки введенной фамилии. 
+        /// </summary>  
+        private string _surnameError;
+
+        /// <summary>
+        /// Содержит текст ошибки введенного имени. 
+        /// </summary>  
+        private string _nameError;
+
+        /// <summary>
+        /// Содержит текст ошибки введенного номера телефона. 
+        /// </summary>  
+        private string _phoneNumberError;
+
+        /// <summary>
+        /// Содержит текст ошибки введенной даты рождения. 
+        /// </summary>  
+        private string _birthOfDateError;
+
+        /// <summary>
+        /// Содержит текст ошибки введенной электронной почты. 
+        /// </summary>  
+        private string _emailError;
+
+        /// <summary>
+        /// Содержит текст ошибки введенного id VK. 
+        /// </summary>  
+        private string _idVkError;
+
+        /// <summary>
+        /// Переменнаая белого цвета. 
+        /// </summary>  
+        private Color colorWhite = Color.White;
+
+        /// <summary>
+        /// Переменнаая розового цвета. 
+        /// </summary>  
+        private Color colorLightPink = Color.LightPink;
+
+        /// <summary>
+        /// Возвращает или залает значение контакта
+        /// </summary>  
         public Contact Contact
         {
             get
@@ -63,27 +101,16 @@ namespace ContactsApp.View.Resources
             SurnameTextBox.Text = _contactCopy.Surname;
             NameTextBox.Text = _contactCopy.Name;
             DateOfBirthTimePicker.Value = _contactCopy.DateOfBirth;
-            PhoneTextBox.Text = Convert.ToString(_contactCopy.PhoneNumber.Number);
+            if (SurnameTextBox.Text == "")
+            {
+                PhoneTextBox.Text = "";
+            }
+            else
+            {
+                PhoneTextBox.Text = Convert.ToString(_contactCopy.PhoneNumber.Number);
+            }
             EmailTextBox.Text = _contactCopy.Email;
             VkComTextBox.Text = _contactCopy.IdVk;
-        }
-
-        /// <summary>
-        /// Проверка правильности введенной фамилии.
-        /// </summary> 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                _contactCopy.Surname = SurnameTextBox.Text;
-                _surnameError = "";
-                SurnameTextBox.BackColor = Color.White;
-            }
-            catch(ArgumentException exception)
-            {
-                SurnameTextBox.BackColor = Color.LightPink;
-                _surnameError = exception.Message;
-            }
         }
 
         /// <summary>
@@ -132,9 +159,45 @@ namespace ContactsApp.View.Resources
         }
 
         /// <summary>
+        /// Проверка правильности введенной фамилии.
+        /// </summary> 
+        private void SurnameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _contactCopy.Surname = SurnameTextBox.Text;
+                _surnameError = "";
+                SurnameTextBox.BackColor = Color.White;
+            }
+            catch (ArgumentException exception)
+            {
+                SurnameTextBox.BackColor = Color.LightPink;
+                _surnameError = exception.Message;
+            }
+        }
+
+        /// <summary>
+        /// Проверка правильности введенного имени.
+        /// </summary> 
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _contactCopy.Name = NameTextBox.Text;
+                _nameError = "";
+                NameTextBox.BackColor = colorWhite;
+            }
+            catch (ArgumentException exception)
+            {
+                NameTextBox.BackColor = colorLightPink;
+                _nameError = exception.Message;
+            }
+        }
+
+        /// <summary>
         /// Проверка правильности выбранной даты.
         /// </summary> 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void BirthOfDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             try
             {
@@ -152,7 +215,7 @@ namespace ContactsApp.View.Resources
         /// <summary>
         /// Проверка правильности введенной электронной почты.
         /// </summary> 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void EmailTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -170,8 +233,12 @@ namespace ContactsApp.View.Resources
         /// <summary>
         /// Проверка правильности введенного номера телефона.
         /// </summary> 
-        private void textBox4_TextChanged(object sender, EventArgs e)
+        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
         {
+            if(PhoneTextBox.Text == "")
+            {
+                return;
+            }
             try
             {
                 _contactCopy.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
@@ -186,27 +253,9 @@ namespace ContactsApp.View.Resources
         }
 
         /// <summary>
-        /// Проверка правильности введенного имени.
-        /// </summary> 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                _contactCopy.Name = NameTextBox.Text;
-                _nameError = "";
-                NameTextBox.BackColor = colorWhite;
-            }
-            catch (ArgumentException exception)
-            {
-                NameTextBox.BackColor = colorLightPink;
-                _nameError = exception.Message;
-            }
-        }
-
-        /// <summary>
         /// Проверка правильности введенного id vk.
         /// </summary> 
-        private void textBox6_TextChanged(object sender, EventArgs e)
+        private void IdVkTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
@@ -221,6 +270,9 @@ namespace ContactsApp.View.Resources
             }
         }
 
+        /// <summary>
+        /// Передает данные из формы в копию класса Contact
+        /// </summary>  
         private void UpdateContact()
         {
             _contactCopy.Surname = SurnameTextBox.Text;
@@ -231,6 +283,9 @@ namespace ContactsApp.View.Resources
             _contactCopy.IdVk = VkComTextBox.Text;
         }
 
+        /// <summary>
+        /// Кнопка Ok
+        /// </summary>  
         private void OkButton_Click(object sender, EventArgs e)
         {
             if (CheckFromOnErrors())
@@ -241,6 +296,9 @@ namespace ContactsApp.View.Resources
             }
         }
 
+        /// <summary>
+        /// Кнопка Cancel
+        /// </summary>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;

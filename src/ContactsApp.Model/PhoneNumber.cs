@@ -44,5 +44,10 @@ namespace ContactsApp.Model
         {
             Number = number;
         }
+
+        public PhoneNumber()
+        {
+
+        }
     }
 }
