@@ -59,7 +59,7 @@ namespace ContactsApp.View
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.DateOfBirthPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.BirthdaysLabel = new System.Windows.Forms.Label();
             this.TodayIsTheBirthdayOfLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ContactMenuStrip.SuspendLayout();
@@ -340,23 +340,23 @@ namespace ContactsApp.View
             // 
             // DateOfBirthPanel
             // 
-            this.DateOfBirthPanel.Controls.Add(this.label1);
+            this.DateOfBirthPanel.Controls.Add(this.BirthdaysLabel);
             this.DateOfBirthPanel.Controls.Add(this.TodayIsTheBirthdayOfLabel);
             this.DateOfBirthPanel.Controls.Add(this.pictureBox1);
-            this.DateOfBirthPanel.Location = new System.Drawing.Point(294, 375);
+            this.DateOfBirthPanel.Location = new System.Drawing.Point(286, 375);
             this.DateOfBirthPanel.Margin = new System.Windows.Forms.Padding(4);
             this.DateOfBirthPanel.Name = "DateOfBirthPanel";
             this.DateOfBirthPanel.Size = new System.Drawing.Size(556, 123);
             this.DateOfBirthPanel.TabIndex = 44;
             // 
-            // label1
+            // BirthdaysLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(155, 23);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 17);
-            this.label1.TabIndex = 46;
+            this.BirthdaysLabel.AutoSize = true;
+            this.BirthdaysLabel.Location = new System.Drawing.Point(155, 23);
+            this.BirthdaysLabel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 0);
+            this.BirthdaysLabel.Name = "BirthdaysLabel";
+            this.BirthdaysLabel.Size = new System.Drawing.Size(0, 17);
+            this.BirthdaysLabel.TabIndex = 46;
             // 
             // TodayIsTheBirthdayOfLabel
             // 
@@ -452,7 +452,7 @@ namespace ContactsApp.View
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel DateOfBirthPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label BirthdaysLabel;
         private System.Windows.Forms.Label TodayIsTheBirthdayOfLabel;
     }
 }

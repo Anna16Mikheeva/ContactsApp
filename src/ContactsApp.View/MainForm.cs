@@ -34,7 +34,7 @@ namespace ContactsApp.View
         {
             _currentContact = _project.SortContacts(_project.Contacts);
             ContactsListBox.Items.Clear();
-            label1.Text = "";
+            BirthdaysLabel.Text = "";
             for(int i=0; i < _currentContact.Count; i++)
             {
                 ContactsListBox.Items.Add(_currentContact[i].Surname);
@@ -45,10 +45,17 @@ namespace ContactsApp.View
         private void BirthdayPeople()
         {
             _currentContactDateOfBirth = _project.SearchByDateOfirth(_currentContact);
-            DateOfBirthPanel.Visible = true;
+            if (_currentContactDateOfBirth.Count >0)
+            {
+                DateOfBirthPanel.Visible = true;
+            }
+            else
+            {
+                DateOfBirthPanel.Visible = false;
+            }
             for (int i = 0; i < _currentContactDateOfBirth.Count; i++)
             {
-                label1.Text = label1.Text + _currentContactDateOfBirth[i].Surname + "\n";
+                BirthdaysLabel.Text = BirthdaysLabel.Text + _currentContactDateOfBirth[i].Surname + "\n";
             }
         }
 
@@ -257,7 +264,7 @@ namespace ContactsApp.View
             string[] arrayIdVk = { "193179578", "fgth2145", "589632100", "op4578963", "745896320",
                                  "afrt12458", "458963215", "457896301", "521003699", "458796320"};
 
-            _currentContact.Add(new Contact(arraySurname[rand.Next(0, arraySurname.Length - 1)],
+            _project.Contacts.Add(new Contact(arraySurname[rand.Next(0, arraySurname.Length - 1)],
                                   arrayName[rand.Next(0, arraySurname.Length - 1)],
                                   arrayNumber[rand.Next(0, arraySurname.Length - 1)],
                                   date, arrayEmail[rand.Next(0, arraySurname.Length - 1)],

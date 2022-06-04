@@ -213,6 +213,29 @@ namespace ContactsApp.View.Resources
         }
 
         /// <summary>
+        /// Проверка правильности введенного номера телефона.
+        /// </summary> 
+        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (PhoneTextBox.Text == "")
+            {
+                PhoneTextBox.BackColor = _colorLightPink;
+                return;
+            }
+            try
+            {
+                _contactCopy.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
+                _phoneNumberError = "";
+                PhoneTextBox.BackColor = _colorWhite;
+            }
+            catch (ArgumentException exception)
+            {
+                PhoneTextBox.BackColor = _colorLightPink;
+                _phoneNumberError = exception.Message;
+            }
+        }
+
+        /// <summary>
         /// Проверка правильности введенной электронной почты.
         /// </summary> 
         private void EmailTextBox_TextChanged(object sender, EventArgs e)
@@ -227,28 +250,6 @@ namespace ContactsApp.View.Resources
             {
                 EmailTextBox.BackColor = _colorLightPink;
                 _emailError = exception.Message;
-            }
-        }
-
-        /// <summary>
-        /// Проверка правильности введенного номера телефона.
-        /// </summary> 
-        private void PhoneTextBox_TextChanged(object sender, EventArgs e)
-        {
-            if(PhoneTextBox.Text == "")
-            {
-                return;
-            }
-            try
-            {
-                _contactCopy.PhoneNumber.Number = long.Parse(PhoneTextBox.Text);
-                _phoneNumberError = "";
-                PhoneTextBox.BackColor = _colorWhite;
-            }
-            catch (ArgumentException exception)
-            {
-                PhoneTextBox.BackColor = _colorLightPink;
-                _phoneNumberError = exception.Message;
             }
         }
 
@@ -302,6 +303,15 @@ namespace ContactsApp.View.Resources
         private void CancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
+        }
+
+        private void PhoneTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

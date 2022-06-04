@@ -53,7 +53,6 @@ namespace ContactsApp.View.Resources
             this.VkComTextBox.Name = "VkComTextBox";
             this.VkComTextBox.Size = new System.Drawing.Size(345, 22);
             this.VkComTextBox.TabIndex = 25;
-            this.VkComTextBox.Text = " ";
             this.VkComTextBox.TextChanged += new System.EventHandler(this.IdVkTextBox_TextChanged);
             // 
             // DateOfBirthTimePicker
@@ -86,6 +85,7 @@ namespace ContactsApp.View.Resources
             this.PhoneTextBox.Size = new System.Drawing.Size(345, 22);
             this.PhoneTextBox.TabIndex = 22;
             this.PhoneTextBox.TextChanged += new System.EventHandler(this.PhoneTextBox_TextChanged);
+            this.PhoneTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneTextBox_KeyPress_1);
             // 
             // NameTextBox
             // 
