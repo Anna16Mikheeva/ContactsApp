@@ -22,17 +22,33 @@ namespace ContactsApp.View
         public MainForm()
         {
             InitializeComponent();
+            DateOfBirthPanel.Visible = false;
         }
+
+        List<Contact> _currentContact, _currentContactDateOfBirth;
 
         /// <summary>
         /// Очищает ContsctsListBox и добавляет данные из коллекции.
         /// </summary> 
         private void UpdateListBox()
         {
+            _currentContact = _project.SortContacts(_project.Contacts);
             ContactsListBox.Items.Clear();
-            for(int i=0;i < _project.Contacts.Count;i++)
+            label1.Text = "";
+            for(int i=0; i < _currentContact.Count; i++)
             {
-               ContactsListBox.Items.Add(_project.Contacts[i].Surname);
+                ContactsListBox.Items.Add(_currentContact[i].Surname);
+            }
+            BirthdayPeople();
+        }
+
+        private void BirthdayPeople()
+        {
+            _currentContactDateOfBirth = _project.SearchByDateOfirth(_currentContact);
+            DateOfBirthPanel.Visible = true;
+            for (int i = 0; i < _currentContactDateOfBirth.Count; i++)
+            {
+                label1.Text = label1.Text + _currentContactDateOfBirth[i].Surname + "\n";
             }
         }
 
@@ -76,7 +92,10 @@ namespace ContactsApp.View
                 ContactsListBox.Items.RemoveAt(index);
 
                 //Удаление контакта из коллекции.
-                _project.Contacts.RemoveAt(index);
+                _currentContact.RemoveAt(index);
+
+                _project.Contacts = _currentContact;
+                UpdateListBox();
             }
         }
 
@@ -98,7 +117,7 @@ namespace ContactsApp.View
             }
             else
             {
-                var contact = _project.Contacts[index];
+                var contact = _currentContact[index];
                 SurnameTextBox.Text = contact.Surname;
                 NameTextBox.Text = contact.Name;
                 DateOfBirthTimePicker.Value = contact.DateOfBirth;
@@ -106,6 +125,27 @@ namespace ContactsApp.View
                 EmailTextBox.Text = contact.Email;
                 VkComTextBox.Text = contact.IdVk;
             }
+        }
+
+        /// <summary>
+        /// Редактирование контакта в верхнем меню.
+        private void EditContact(int index)
+        {
+            if (index == -1)
+            {
+                return;
+            }
+            ContactForm contactForm = new ContactForm();
+            contactForm.Contact = _currentContact[index];
+            //contactForm.Contact = _project.Contacts[index];
+            contactForm.ShowDialog();
+            if (contactForm.Contact != null)
+            {
+                _currentContact[index] = contactForm.Contact;
+                _project.Contacts = _currentContact;
+                UpdateListBox();
+            }
+            ContactsListBox.SelectedIndex = index;
         }
 
         /// <summary>
@@ -183,25 +223,6 @@ namespace ContactsApp.View
         }
 
         /// <summary>
-        /// Редактирование контакта в верхнем меню.
-        private void EditContact(int index)
-        {
-            if (index == -1)
-            {
-                return;
-            }
-            ContactForm contactForm = new ContactForm();
-            contactForm.Contact = _project.Contacts[index];
-            contactForm.ShowDialog();
-            if (contactForm.Contact != null)
-            {
-                _project.Contacts[index] = contactForm.Contact;
-                UpdateListBox();
-            }
-            ContactsListBox.SelectedIndex = index;
-        }
-
-        /// <summary>
         /// Вызов информации о приложении.
         /// </summary>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -236,11 +257,12 @@ namespace ContactsApp.View
             string[] arrayIdVk = { "193179578", "fgth2145", "589632100", "op4578963", "745896320",
                                  "afrt12458", "458963215", "457896301", "521003699", "458796320"};
 
-            _project.Contacts.Add(new Contact(arraySurname[rand.Next(0, arraySurname.Length - 1)],
+            _currentContact.Add(new Contact(arraySurname[rand.Next(0, arraySurname.Length - 1)],
                                   arrayName[rand.Next(0, arraySurname.Length - 1)],
                                   arrayNumber[rand.Next(0, arraySurname.Length - 1)],
                                   date, arrayEmail[rand.Next(0, arraySurname.Length - 1)],
                                   arrayIdVk[rand.Next(0, arraySurname.Length - 1)]));
+            UpdateListBox(); 
         }
     }
 }

@@ -58,7 +58,13 @@ namespace ContactsApp.View
             this.AddButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
+            this.DateOfBirthPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TodayIsTheBirthdayOfLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ContactMenuStrip.SuspendLayout();
+            this.DateOfBirthPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ContactMenuStrip
@@ -73,7 +79,7 @@ namespace ContactsApp.View
             this.ContactMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ContactMenuStrip.Name = "ContactMenuStrip";
             this.ContactMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.ContactMenuStrip.Size = new System.Drawing.Size(334, 28);
+            this.ContactMenuStrip.Size = new System.Drawing.Size(184, 28);
             this.ContactMenuStrip.TabIndex = 38;
             this.ContactMenuStrip.Text = "menuStrip1";
             // 
@@ -105,21 +111,21 @@ namespace ContactsApp.View
             // addContactToolStripMenuItem
             // 
             this.addContactToolStripMenuItem.Name = "addContactToolStripMenuItem";
-            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.addContactToolStripMenuItem.Text = "Add Contact";
             this.addContactToolStripMenuItem.Click += new System.EventHandler(this.addContactToolStripMenuItem_Click);
             // 
             // editContactToolStripMenuItem
             // 
             this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
-            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.editContactToolStripMenuItem.Text = "Edit Contact";
             this.editContactToolStripMenuItem.Click += new System.EventHandler(this.editContactToolStripMenuItem_Click);
             // 
             // removeContactToolStripMenuItem
             // 
             this.removeContactToolStripMenuItem.Name = "removeContactToolStripMenuItem";
-            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.removeContactToolStripMenuItem.Text = "Remove Contact";
             this.removeContactToolStripMenuItem.Click += new System.EventHandler(this.removeContactToolStripMenuItem_Click);
             // 
@@ -332,11 +338,54 @@ namespace ContactsApp.View
             this.EditButton.UseVisualStyleBackColor = true;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
+            // DateOfBirthPanel
+            // 
+            this.DateOfBirthPanel.Controls.Add(this.label1);
+            this.DateOfBirthPanel.Controls.Add(this.TodayIsTheBirthdayOfLabel);
+            this.DateOfBirthPanel.Controls.Add(this.pictureBox1);
+            this.DateOfBirthPanel.Location = new System.Drawing.Point(294, 375);
+            this.DateOfBirthPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.DateOfBirthPanel.Name = "DateOfBirthPanel";
+            this.DateOfBirthPanel.Size = new System.Drawing.Size(556, 123);
+            this.DateOfBirthPanel.TabIndex = 44;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(155, 23);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 17);
+            this.label1.TabIndex = 46;
+            // 
+            // TodayIsTheBirthdayOfLabel
+            // 
+            this.TodayIsTheBirthdayOfLabel.AutoSize = true;
+            this.TodayIsTheBirthdayOfLabel.Location = new System.Drawing.Point(155, 4);
+            this.TodayIsTheBirthdayOfLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TodayIsTheBirthdayOfLabel.Name = "TodayIsTheBirthdayOfLabel";
+            this.TodayIsTheBirthdayOfLabel.Size = new System.Drawing.Size(161, 17);
+            this.TodayIsTheBirthdayOfLabel.TabIndex = 45;
+            this.TodayIsTheBirthdayOfLabel.Text = "Today is the birthday of:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(143, 116);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 511);
+            this.Controls.Add(this.DateOfBirthPanel);
             this.Controls.Add(this.ContactsListBox);
             this.Controls.Add(this.SurnameTextBox);
             this.Controls.Add(this.AddButton);
@@ -364,6 +413,9 @@ namespace ContactsApp.View
             this.Text = " ContactsApp";
             this.ContactMenuStrip.ResumeLayout(false);
             this.ContactMenuStrip.PerformLayout();
+            this.DateOfBirthPanel.ResumeLayout(false);
+            this.DateOfBirthPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,6 +450,10 @@ namespace ContactsApp.View
         private System.Windows.Forms.ListBox ContactsListBox;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Panel DateOfBirthPanel;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label TodayIsTheBirthdayOfLabel;
     }
 }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 /// <summary>
 /// Описание проекта.
 /// </summary> 
@@ -22,17 +23,20 @@ namespace ContactsApp.Model
         /// <summary>
         /// Сортировка контакта по алфавиту.
         /// </summary>
-        public void SortContacts()
+        public List<Contact> SortContacts(List<Contact> contacts)
         {
-
+            contacts = contacts.OrderBy(contact => contact.Surname).ToList();
+            return contacts;
         }
+
 
         /// <summary>
         /// Поиск контакта по дате рождения.
         /// </summary>
-        public void SearchByDateOfirth()
+        public List<Contact> SearchByDateOfirth(List<Contact> contacts)
         {
-
+            contacts = contacts.Where(contact => contact.DateOfBirth.Date == DateTime.Now.Date).ToList();
+            return contacts;
         }
     }
 }
