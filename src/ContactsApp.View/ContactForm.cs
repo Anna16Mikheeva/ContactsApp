@@ -60,17 +60,17 @@ namespace ContactsApp.View.Resources
         private string _idVkError;
 
         /// <summary>
-        /// Переменнаая белого цвета. 
+        /// Переменная белого цвета. 
         /// </summary>  
         private Color _colorWhite = Color.White;
 
         /// <summary>
-        /// Переменнаая розового цвета. 
+        /// Переменная розового цвета. 
         /// </summary>  
         private Color _colorLightPink = Color.LightPink;
 
         /// <summary>
-        /// Возвращает или залает значение контакта
+        /// Возвращает или задает значение контакта
         /// </summary>  
         public Contact Contact
         {
@@ -150,11 +150,13 @@ namespace ContactsApp.View.Resources
                 {
                     Error += _idVkError;
                 }
-                MessageBox.Show(Error, "Error",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
-                Error = "";
-                return false;
+
+                //Отображения окна с ошибками.
+                 MessageBox.Show(Error, "Error",
+                 MessageBoxButtons.OK,
+                 MessageBoxIcon.Error);
+                 Error = "";
+                 return false;
             }
         }
 
@@ -272,7 +274,7 @@ namespace ContactsApp.View.Resources
         }
 
         /// <summary>
-        /// Передает данные из формы в копию класса Contact
+        /// Передает данные из формы в копию класса Contact.
         /// </summary>  
         private void UpdateContact()
         {
@@ -285,7 +287,7 @@ namespace ContactsApp.View.Resources
         }
 
         /// <summary>
-        /// Кнопка Ok
+        /// Кнопка Ok.
         /// </summary>  
         private void OkButton_Click(object sender, EventArgs e)
         {
@@ -307,7 +309,10 @@ namespace ContactsApp.View.Resources
 
         private void PhoneTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+            //Получает введенный символ.
             char number = e.KeyChar;
+            //Если ввеженный символ не принадлжет десятичным числам,
+            //то символ не вводится в TextBox.
             if (!Char.IsDigit(number))
             {
                 e.Handled = true;

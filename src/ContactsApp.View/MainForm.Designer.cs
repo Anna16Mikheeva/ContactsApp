@@ -39,7 +39,6 @@ namespace ContactsApp.View
             this.removeContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.FindLabel = new System.Windows.Forms.Label();
             this.VkComLable = new System.Windows.Forms.Label();
             this.EmailLable = new System.Windows.Forms.Label();
@@ -74,12 +73,11 @@ namespace ContactsApp.View
             this.ContactMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem1,
             this.editToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.helpToolStripMenuItem});
             this.ContactMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ContactMenuStrip.Name = "ContactMenuStrip";
             this.ContactMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.ContactMenuStrip.Size = new System.Drawing.Size(184, 28);
+            this.ContactMenuStrip.Size = new System.Drawing.Size(307, 28);
             this.ContactMenuStrip.TabIndex = 38;
             this.ContactMenuStrip.Text = "menuStrip1";
             // 
@@ -94,7 +92,7 @@ namespace ContactsApp.View
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(116, 26);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.helpToolStripMenuItem1.Text = "Exit";
             this.helpToolStripMenuItem1.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -111,21 +109,21 @@ namespace ContactsApp.View
             // addContactToolStripMenuItem
             // 
             this.addContactToolStripMenuItem.Name = "addContactToolStripMenuItem";
-            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.addContactToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addContactToolStripMenuItem.Text = "Add Contact";
             this.addContactToolStripMenuItem.Click += new System.EventHandler(this.addContactToolStripMenuItem_Click);
             // 
             // editContactToolStripMenuItem
             // 
             this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
-            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.editContactToolStripMenuItem.Text = "Edit Contact";
             this.editContactToolStripMenuItem.Click += new System.EventHandler(this.editContactToolStripMenuItem_Click);
             // 
             // removeContactToolStripMenuItem
             // 
             this.removeContactToolStripMenuItem.Name = "removeContactToolStripMenuItem";
-            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.removeContactToolStripMenuItem.Text = "Remove Contact";
             this.removeContactToolStripMenuItem.Click += new System.EventHandler(this.removeContactToolStripMenuItem_Click);
             // 
@@ -144,13 +142,6 @@ namespace ContactsApp.View
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             this.aboutToolStripMenuItem.TextChanged += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(27, 24);
-            this.toolStripMenuItem1.Text = "!";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // FindLabel
             // 
@@ -449,7 +440,6 @@ namespace ContactsApp.View
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.ListBox ContactsListBox;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel DateOfBirthPanel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label BirthdaysLabel;
