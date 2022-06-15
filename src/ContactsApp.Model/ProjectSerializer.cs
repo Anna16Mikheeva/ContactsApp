@@ -9,22 +9,6 @@ namespace ContactsApp.Model
 {
     public class ProjectSerializer
     {
-        public string Filename{ get; set; } = 
-            Environment.GetFolderPath(SpecialFolder.ApplicationData) + "\\Mikheeva\\ContsctsApp";
-
-        public void SaveToFile(Project project)
-        {
-
-        }
-        public Project LoadFromFile()
-        {
-            Project p = new Project();
-            return p;
-        }
-
-        public ProjectSerializer()
-        {
-            
-        }
+        
     }
 }
