@@ -35,7 +35,8 @@ namespace ContactsApp.Model
         /// </summary>
         public List<Contact> SearchByDateOfirth(List<Contact> contacts)
         {
-            contacts = contacts.Where(contact => contact.DateOfBirth.Date == DateTime.Now.Date).ToList();
+            contacts = contacts.Where(contact => (contact.DateOfBirth.Day == DateTime.Now.Day) &&
+                (contact.DateOfBirth.Month == DateTime.Now.Month)).ToList();
             return contacts;
         }
     }
