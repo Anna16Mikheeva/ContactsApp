@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace ContactsApp.View
 {
     partial class MainForm
@@ -439,6 +441,12 @@ namespace ContactsApp.View
         private System.Windows.Forms.TextBox FindTextBox;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button EditButton;
+
+        public Panel DateOfBirthPanel { get; private set; }
+        public Label BirthdaysLabel { get; private set; }
+        public Label TodayIsTheBirthdayOfLabel { get; private set; }
+
+        private PictureBox pictureBox1;
         private System.Windows.Forms.ListBox ContactsListBox;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
