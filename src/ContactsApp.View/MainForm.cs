@@ -23,6 +23,8 @@ namespace ContactsApp.View
         {
             InitializeComponent();
             DateOfBirthPanel.Visible = false;
+            //Выгружает из файла userdata.json.
+            _project = _projectSerializer.LoadFromFile();
         }
 
         /// <summary>
@@ -34,6 +36,11 @@ namespace ContactsApp.View
         /// Создание списка контактов.
         /// </summary> 
         List<Contact> _currentContactDateOfBirth;
+
+        /// <summary>
+        /// Экземпляр класс ProjectSerializer для сереализации.
+        /// </summary>
+        private ProjectSerializer _projectSerializer = new ProjectSerializer();
 
         /// <summary>
         /// Очищает ContsctsListBox и добавляет данные из коллекции.
@@ -82,6 +89,7 @@ namespace ContactsApp.View
             {
                 _project.Contacts.Add(contactForm.Contact);
                 UpdateListBox();
+                _projectSerializer.SaveToFile(_project);
             }
         }
 
@@ -114,6 +122,7 @@ namespace ContactsApp.View
 
                 _project.Contacts = _currentContact;
                 UpdateListBox();
+                _projectSerializer.SaveToFile(_project);
             }
         }
 
@@ -162,6 +171,7 @@ namespace ContactsApp.View
                 _currentContact[index] = contactForm.Contact;
                 _project.Contacts = _currentContact;
                 UpdateListBox();
+                _projectSerializer.SaveToFile(_project);
             }
             ContactsListBox.SelectedIndex = index;
         }
@@ -236,6 +246,7 @@ namespace ContactsApp.View
             MessageBoxDefaultButton.Button1);
             if(result == DialogResult.Yes)
             {
+                _projectSerializer.SaveToFile(_project);
                 Close();
             }
         }
