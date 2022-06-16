@@ -77,7 +77,7 @@ namespace ContactsApp.View
             this.ContactMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.ContactMenuStrip.Name = "ContactMenuStrip";
             this.ContactMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.ContactMenuStrip.Size = new System.Drawing.Size(307, 28);
+            this.ContactMenuStrip.Size = new System.Drawing.Size(157, 28);
             this.ContactMenuStrip.TabIndex = 38;
             this.ContactMenuStrip.Text = "menuStrip1";
             // 
@@ -181,6 +181,7 @@ namespace ContactsApp.View
             // 
             // DateOfBirthTimePicker
             // 
+            this.DateOfBirthTimePicker.Enabled = false;
             this.DateOfBirthTimePicker.Location = new System.Drawing.Point(389, 89);
             this.DateOfBirthTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DateOfBirthTimePicker.Name = "DateOfBirthTimePicker";
@@ -440,10 +441,7 @@ namespace ContactsApp.View
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.ListBox ContactsListBox;
         private System.Windows.Forms.Button AddButton;
-        private System.Windows.Forms.Panel DateOfBirthPanel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label BirthdaysLabel;
-        private System.Windows.Forms.Label TodayIsTheBirthdayOfLabel;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
