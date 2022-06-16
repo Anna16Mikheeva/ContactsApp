@@ -22,9 +22,16 @@ namespace ContactsApp.View
         public MainForm()
         {
             InitializeComponent();
-            DateOfBirthPanel.Visible = false;
             //Выгружает из файла userdata.json.
             _project = _projectSerializer.LoadFromFile();
+            _currentContact = _project.SortContacts(_project.Contacts);
+            BirthdaysLabel.Text = "";
+            for (int i = 0; i < _currentContact.Count; i++)
+            {
+                ContactsListBox.Items.Add(_currentContact[i].Surname);
+            }
+            DateOfBirthPanel.Visible = false;
+            BirthdayPeople();
         }
 
         /// <summary>
