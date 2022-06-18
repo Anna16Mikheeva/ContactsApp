@@ -57,7 +57,7 @@ namespace ContactsApp.View
             _currentContact = _project.SortContacts(_project.Contacts);
             ContactsListBox.Items.Clear();
             BirthdaysLabel.Text = "";
-            for(int i=0; i < _currentContact.Count; i++)
+            for (int i = 0; i < _currentContact.Count; i++)
             {
                 ContactsListBox.Items.Add(_currentContact[i].Surname);
             }
@@ -70,14 +70,7 @@ namespace ContactsApp.View
         private void BirthdayPeople()
         {
             _currentContactDateOfBirth = _project.SearchByDateOfirth(_currentContact);
-            if (_currentContactDateOfBirth.Count >0)
-            {
-                DateOfBirthPanel.Visible = true;
-            }
-            else
-            {
-                DateOfBirthPanel.Visible = false;
-            }
+            DateOfBirthPanel.Visible = _currentContactDateOfBirth.Count > 0;
             for (int i = 0; i < _currentContactDateOfBirth.Count; i++)
             {
                 BirthdaysLabel.Text = BirthdaysLabel.Text + _currentContactDateOfBirth[i].Surname + "\n";
@@ -251,7 +244,7 @@ namespace ContactsApp.View
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Information,
             MessageBoxDefaultButton.Button1);
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 _projectSerializer.SaveToFile(_project);
                 Close();
@@ -265,11 +258,6 @@ namespace ContactsApp.View
         {
             AboutForm aboutForm = new AboutForm();
             aboutForm.Show();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
