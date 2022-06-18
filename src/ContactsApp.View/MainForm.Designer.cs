@@ -352,7 +352,7 @@ namespace ContactsApp.View
             // 
             this.TodayIsTheBirthdayOfLabel.Location = new System.Drawing.Point(150, 3);
             this.TodayIsTheBirthdayOfLabel.Name = "TodayIsTheBirthdayOfLabel";
-            this.TodayIsTheBirthdayOfLabel.Size = new System.Drawing.Size(100, 23);
+            this.TodayIsTheBirthdayOfLabel.Size = new System.Drawing.Size(186, 23);
             this.TodayIsTheBirthdayOfLabel.TabIndex = 1;
             this.TodayIsTheBirthdayOfLabel.Text = "Today is the birthday of:";
             // 
