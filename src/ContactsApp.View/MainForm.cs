@@ -25,12 +25,12 @@ namespace ContactsApp.View
             //Выгружает из файла userdata.json.
             _project = _projectSerializer.LoadFromFile();
             _currentContact = _project.SortContacts(_project.Contacts);
-            BirthdaysLabel.Text = "";
+            //BirthdaysLabel.Text = "";
             for (int i = 0; i < _currentContact.Count; i++)
             {
                 ContactsListBox.Items.Add(_currentContact[i].Surname);
             }
-            DateOfBirthPanel.Visible = false;
+            //DateOfBirthPanel.Visible = false;
             BirthdayPeople();
         }
 
@@ -56,7 +56,7 @@ namespace ContactsApp.View
         {
             _currentContact = _project.SortContacts(_project.Contacts);
             ContactsListBox.Items.Clear();
-            BirthdaysLabel.Text = "";
+            //BirthdaysLabel.Text = "";
             for(int i=0; i < _currentContact.Count; i++)
             {
                 ContactsListBox.Items.Add(_currentContact[i].Surname);
@@ -72,15 +72,15 @@ namespace ContactsApp.View
             _currentContactDateOfBirth = _project.SearchByDateOfirth(_currentContact);
             if (_currentContactDateOfBirth.Count >0)
             {
-                DateOfBirthPanel.Visible = true;
+                //DateOfBirthPanel.Visible = true;
             }
             else
             {
-                DateOfBirthPanel.Visible = false;
+                //DateOfBirthPanel.Visible = false;
             }
             for (int i = 0; i < _currentContactDateOfBirth.Count; i++)
             {
-                BirthdaysLabel.Text = BirthdaysLabel.Text + _currentContactDateOfBirth[i].Surname + "\n";
+                //BirthdaysLabel.Text = BirthdaysLabel.Text + _currentContactDateOfBirth[i].Surname + "\n";
             }
         }
 
