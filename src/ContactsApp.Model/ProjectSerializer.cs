@@ -14,7 +14,7 @@ namespace ContactsApp.Model
         // <summary>
         /// Экземляр класса потока.
         /// </summary>
-        private Stream _stream;
+        private Stream stream;
 
         // <summary>
         /// Путь до папки, в которую сохраняется текстовый файл.
@@ -26,22 +26,20 @@ namespace ContactsApp.Model
         /// </summary>
         public void SaveToFile(Project project)
         {
-            if (!(Directory.Exists(GetFolderPath(SpecialFolder.ApplicationData)
-            + "\\Mikheeva\\ContactsApp")))
+            if (FileName == null)
             {
-                Directory.CreateDirectory(GetFolderPath(SpecialFolder.ApplicationData)
-                + "\\Mikheeva\\ContactsApp");
-                if (!File.Exists(FileName))
+                Directory.CreateDirectory(FileName);
+                if (!File.Exists(FileName + "\\userdata.json"))
                 {
-                    File.Create(FileName);
+                    File.Create(FileName + "\\userdata.json");
                 }
             }
             //Создаём экземпляр сериализатора.
             JsonSerializer serializer = new JsonSerializer();
             //Открываем поток для записи в файл с указанием пути.
-            using (_stream = File.Open(@FileName, FileMode.OpenOrCreate, FileAccess.Write))
+            using (stream = File.Open(@FileName, FileMode.OpenOrCreate, FileAccess.Write))
             {
-                StreamWriter _streamWriter = new StreamWriter(_stream);
+                StreamWriter _streamWriter = new StreamWriter(stream);
                 using (JsonWriter _writer = new JsonTextWriter(_streamWriter))
                 {
                     //Вызываем сериализацию и передаем объект, который хотим сериализовать.
@@ -58,14 +56,12 @@ namespace ContactsApp.Model
             //Создаём переменную, в которую поместим результат
             //десериализации.
             Project project = null;
-            if (!(Directory.Exists(GetFolderPath(SpecialFolder.ApplicationData)
-            + "\\Mikheeva\\ContactsApp")))
+            if (FileName == null)
             {
-                Directory.CreateDirectory(GetFolderPath(SpecialFolder.ApplicationData)
-                + "\\Mikheeva\\ContactsApp");
-                if (!File.Exists(FileName))
+                Directory.CreateDirectory(FileName);
+                if (!File.Exists(FileName + "\\userdata.json"))
                 {
-                    File.Create(FileName);
+                    File.Create(FileName + "\\userdata.json");
                 }
             }
             try
@@ -73,9 +69,9 @@ namespace ContactsApp.Model
                 //Создаём экземпляр сериализатора.
                 JsonSerializer serializer = new JsonSerializer();
                 //Открываем поток для чтения из файла с указанием пути.
-                using (_stream = File.Open(@FileName, FileMode.OpenOrCreate, FileAccess.Read))
+                using (stream = File.Open(@FileName, FileMode.OpenOrCreate, FileAccess.Read))
                 {
-                    StreamReader _streamReader = new StreamReader(_stream);
+                    StreamReader _streamReader = new StreamReader(stream);
                     using (JsonReader _reader = new JsonTextReader(_streamReader))
                     {
                         //Вызываем десериализацию и явно преобразуем результат в
@@ -98,7 +94,7 @@ namespace ContactsApp.Model
         public ProjectSerializer()
         {
             FileName = Environment.GetFolderPath(SpecialFolder.ApplicationData)
-            + "\\Mikheeva\\ContactsApp\\userdata.json";
+            + "\\Mikheeva\\ContactsApp";
         }
     }
 }
