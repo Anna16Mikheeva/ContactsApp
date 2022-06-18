@@ -332,14 +332,39 @@ namespace ContactsApp.View
             // 
             // DateOfBirthPanel
             // 
+            this.DateOfBirthPanel.Controls.Add(this.BirthdaysLabel);
+            this.DateOfBirthPanel.Controls.Add(this.TodayIsTheBirthdayOfLabel);
+            this.DateOfBirthPanel.Controls.Add(this.BirthdayPeoplePictureBox);
+            this.DateOfBirthPanel.Location = new System.Drawing.Point(296, 362);
+            this.DateOfBirthPanel.Name = "DateOfBirthPanel";
+            this.DateOfBirthPanel.Size = new System.Drawing.Size(551, 137);
+            this.DateOfBirthPanel.TabIndex = 44;
+            // 
+            // BirthdaysLabel
+            // 
+            this.BirthdaysLabel.AutoSize = true;
+            this.BirthdaysLabel.Location = new System.Drawing.Point(151, 20);
+            this.BirthdaysLabel.Name = "BirthdaysLabel";
+            this.BirthdaysLabel.Size = new System.Drawing.Size(0, 17);
+            this.BirthdaysLabel.TabIndex = 2;
             // 
             // TodayIsTheBirthdayOfLabel
-            //
+            // 
+            this.TodayIsTheBirthdayOfLabel.AutoSize = true;
+            this.TodayIsTheBirthdayOfLabel.Location = new System.Drawing.Point(151, 3);
+            this.TodayIsTheBirthdayOfLabel.Name = "TodayIsTheBirthdayOfLabel";
+            this.TodayIsTheBirthdayOfLabel.Size = new System.Drawing.Size(161, 17);
+            this.TodayIsTheBirthdayOfLabel.TabIndex = 1;
+            this.TodayIsTheBirthdayOfLabel.Text = "Today is the birthday of:";
             // 
             // BirthdayPeoplePictureBox
             // 
-            // 
-            // BirthdaysLabel
+            this.BirthdayPeoplePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BirthdayPeoplePictureBox.Image")));
+            this.BirthdayPeoplePictureBox.Location = new System.Drawing.Point(3, 3);
+            this.BirthdayPeoplePictureBox.Name = "BirthdayPeoplePictureBox";
+            this.BirthdayPeoplePictureBox.Size = new System.Drawing.Size(142, 131);
+            this.BirthdayPeoplePictureBox.TabIndex = 0;
+            this.BirthdayPeoplePictureBox.TabStop = false;
             // 
             // MainForm
             // 
