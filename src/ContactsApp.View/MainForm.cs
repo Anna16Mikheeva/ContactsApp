@@ -70,14 +70,7 @@ namespace ContactsApp.View
         private void BirthdayPeople()
         {
             _currentContactDateOfBirth = _project.SearchByDateOfirth(_currentContact);
-            if (_currentContactDateOfBirth.Count >0)
-            {
-                DateOfBirthPanel.Visible = true;
-            }
-            else
-            {
-                DateOfBirthPanel.Visible = false;
-            }
+            DateOfBirthPanel.Visible = _currentContactDateOfBirth.Count > 0;
             for (int i = 0; i < _currentContactDateOfBirth.Count; i++)
             {
                 BirthdaysLabel.Text = BirthdaysLabel.Text + _currentContactDateOfBirth[i].Surname + "\n";
