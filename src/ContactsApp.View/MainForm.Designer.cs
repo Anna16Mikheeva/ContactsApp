@@ -1,6 +1,4 @@
 ﻿
-using System.Windows.Forms;
-
 namespace ContactsApp.View
 {
     partial class MainForm
@@ -64,6 +62,7 @@ namespace ContactsApp.View
             this.TodayIsTheBirthdayOfLabel = new System.Windows.Forms.Label();
             this.BirthdayPeoplePictureBox = new System.Windows.Forms.PictureBox();
             this.ContactMenuStrip.SuspendLayout();
+            this.DateOfBirthPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayPeoplePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,17 +176,17 @@ namespace ContactsApp.View
             this.SurnameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.SurnameTextBox.Location = new System.Drawing.Point(292, 25);
-            this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.SurnameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SurnameTextBox.Name = "SurnameTextBox";
             this.SurnameTextBox.ReadOnly = true;
-            this.SurnameTextBox.Size = new System.Drawing.Size(418, 20);
+            this.SurnameTextBox.Size = new System.Drawing.Size(347, 20);
             this.SurnameTextBox.TabIndex = 39;
             // 
             // DateOfBirthTimePicker
             // 
             this.DateOfBirthTimePicker.Enabled = false;
             this.DateOfBirthTimePicker.Location = new System.Drawing.Point(292, 72);
-            this.DateOfBirthTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.DateOfBirthTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DateOfBirthTimePicker.Name = "DateOfBirthTimePicker";
             this.DateOfBirthTimePicker.Size = new System.Drawing.Size(122, 20);
             this.DateOfBirthTimePicker.TabIndex = 33;
@@ -206,10 +205,10 @@ namespace ContactsApp.View
             this.NameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.NameTextBox.Location = new System.Drawing.Point(292, 48);
-            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.ReadOnly = true;
-            this.NameTextBox.Size = new System.Drawing.Size(418, 20);
+            this.NameTextBox.Size = new System.Drawing.Size(347, 20);
             this.NameTextBox.TabIndex = 40;
             // 
             // BirthdayLabel
@@ -225,11 +224,11 @@ namespace ContactsApp.View
             // 
             this.PhoneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneTextBox.Location = new System.Drawing.Point(291, 96);
-            this.PhoneTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.PhoneTextBox.Location = new System.Drawing.Point(292, 96);
+            this.PhoneTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.ReadOnly = true;
-            this.PhoneTextBox.Size = new System.Drawing.Size(417, 20);
+            this.PhoneTextBox.Size = new System.Drawing.Size(347, 20);
             this.PhoneTextBox.TabIndex = 41;
             // 
             // NameLable
@@ -246,10 +245,10 @@ namespace ContactsApp.View
             this.EmailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EmailTextBox.Location = new System.Drawing.Point(292, 120);
-            this.EmailTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.EmailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.ReadOnly = true;
-            this.EmailTextBox.Size = new System.Drawing.Size(418, 20);
+            this.EmailTextBox.Size = new System.Drawing.Size(347, 20);
             this.EmailTextBox.TabIndex = 42;
             // 
             // SurnameLabel
@@ -267,16 +266,16 @@ namespace ContactsApp.View
             this.VkComTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.VkComTextBox.Location = new System.Drawing.Point(292, 144);
-            this.VkComTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.VkComTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VkComTextBox.Name = "VkComTextBox";
             this.VkComTextBox.ReadOnly = true;
-            this.VkComTextBox.Size = new System.Drawing.Size(418, 20);
+            this.VkComTextBox.Size = new System.Drawing.Size(347, 20);
             this.VkComTextBox.TabIndex = 43;
             // 
             // FindTextBox
             // 
             this.FindTextBox.Location = new System.Drawing.Point(43, 25);
-            this.FindTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.FindTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FindTextBox.Name = "FindTextBox";
             this.FindTextBox.Size = new System.Drawing.Size(168, 20);
             this.FindTextBox.TabIndex = 32;
@@ -288,9 +287,9 @@ namespace ContactsApp.View
             this.ContactsListBox.FormattingEnabled = true;
             this.ContactsListBox.IntegralHeight = false;
             this.ContactsListBox.Location = new System.Drawing.Point(9, 48);
-            this.ContactsListBox.Margin = new System.Windows.Forms.Padding(2);
+            this.ContactsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ContactsListBox.Name = "ContactsListBox";
-            this.ContactsListBox.Size = new System.Drawing.Size(201, 379);
+            this.ContactsListBox.Size = new System.Drawing.Size(201, 321);
             this.ContactsListBox.TabIndex = 34;
             this.ContactsListBox.SelectedIndexChanged += new System.EventHandler(this.ContactsListBox_SelectedIndexChanged);
             // 
@@ -301,8 +300,8 @@ namespace ContactsApp.View
             this.AddButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("AddButton.BackgroundImage")));
             this.AddButton.FlatAppearance.BorderSize = 0;
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddButton.Location = new System.Drawing.Point(9, 431);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddButton.Location = new System.Drawing.Point(9, 373);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(30, 32);
             this.AddButton.TabIndex = 35;
@@ -315,8 +314,8 @@ namespace ContactsApp.View
             this.DeleteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DeleteButton.BackgroundImage")));
             this.DeleteButton.FlatAppearance.BorderSize = 0;
             this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteButton.Location = new System.Drawing.Point(78, 431);
-            this.DeleteButton.Margin = new System.Windows.Forms.Padding(2);
+            this.DeleteButton.Location = new System.Drawing.Point(78, 373);
+            this.DeleteButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(30, 32);
             this.DeleteButton.TabIndex = 37;
@@ -329,40 +328,51 @@ namespace ContactsApp.View
             this.EditButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("EditButton.BackgroundImage")));
             this.EditButton.FlatAppearance.BorderSize = 0;
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditButton.Location = new System.Drawing.Point(44, 431);
-            this.EditButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EditButton.Location = new System.Drawing.Point(44, 373);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(30, 32);
             this.EditButton.TabIndex = 36;
             this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // DateOfBirthPanel
             // 
-            this.DateOfBirthPanel.Location = new System.Drawing.Point(223, 327);
+            this.DateOfBirthPanel.Controls.Add(this.BirthdaysLabel);
+            this.DateOfBirthPanel.Controls.Add(this.TodayIsTheBirthdayOfLabel);
+            this.DateOfBirthPanel.Controls.Add(this.BirthdayPeoplePictureBox);
+            this.DateOfBirthPanel.Location = new System.Drawing.Point(222, 293);
+            this.DateOfBirthPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DateOfBirthPanel.Name = "DateOfBirthPanel";
-            this.DateOfBirthPanel.Size = new System.Drawing.Size(386, 100);
-            this.DateOfBirthPanel.TabIndex = 0;
+            this.DateOfBirthPanel.Size = new System.Drawing.Size(413, 111);
+            this.DateOfBirthPanel.TabIndex = 44;
             // 
             // BirthdaysLabel
             // 
             this.BirthdaysLabel.AutoSize = true;
-            this.BirthdaysLabel.Location = new System.Drawing.Point(151, 20);
+            this.BirthdaysLabel.Location = new System.Drawing.Point(113, 16);
+            this.BirthdaysLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.BirthdaysLabel.Name = "BirthdaysLabel";
-            this.BirthdaysLabel.Size = new System.Drawing.Size(0, 17);
+            this.BirthdaysLabel.Size = new System.Drawing.Size(0, 13);
             this.BirthdaysLabel.TabIndex = 2;
             // 
             // TodayIsTheBirthdayOfLabel
             // 
-            this.TodayIsTheBirthdayOfLabel.Location = new System.Drawing.Point(0, 0);
+            this.TodayIsTheBirthdayOfLabel.AutoSize = true;
+            this.TodayIsTheBirthdayOfLabel.Location = new System.Drawing.Point(113, 2);
+            this.TodayIsTheBirthdayOfLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TodayIsTheBirthdayOfLabel.Name = "TodayIsTheBirthdayOfLabel";
-            this.TodayIsTheBirthdayOfLabel.Size = new System.Drawing.Size(100, 23);
-            this.TodayIsTheBirthdayOfLabel.TabIndex = 0;
+            this.TodayIsTheBirthdayOfLabel.Size = new System.Drawing.Size(120, 13);
+            this.TodayIsTheBirthdayOfLabel.TabIndex = 1;
+            this.TodayIsTheBirthdayOfLabel.Text = "Today is the birthday of:";
             // 
             // BirthdayPeoplePictureBox
             // 
-            this.BirthdayPeoplePictureBox.Location = new System.Drawing.Point(0, 0);
+            this.BirthdayPeoplePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("BirthdayPeoplePictureBox.Image")));
+            this.BirthdayPeoplePictureBox.Location = new System.Drawing.Point(2, 2);
+            this.BirthdayPeoplePictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BirthdayPeoplePictureBox.Name = "BirthdayPeoplePictureBox";
-            this.BirthdayPeoplePictureBox.Size = new System.Drawing.Size(100, 50);
+            this.BirthdayPeoplePictureBox.Size = new System.Drawing.Size(106, 106);
             this.BirthdayPeoplePictureBox.TabIndex = 0;
             this.BirthdayPeoplePictureBox.TabStop = false;
             // 
@@ -370,7 +380,8 @@ namespace ContactsApp.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(715, 473);
+            this.ClientSize = new System.Drawing.Size(644, 415);
+            this.Controls.Add(this.DateOfBirthPanel);
             this.Controls.Add(this.ContactsListBox);
             this.Controls.Add(this.SurnameTextBox);
             this.Controls.Add(this.AddButton);
@@ -390,15 +401,16 @@ namespace ContactsApp.View
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.BirthdayLabel);
             this.Controls.Add(this.SurnameLabel);
-            this.Controls.Add(this.DateOfBirthPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ContactsApp";
             this.ContactMenuStrip.ResumeLayout(false);
             this.ContactMenuStrip.PerformLayout();
+            this.DateOfBirthPanel.ResumeLayout(false);
+            this.DateOfBirthPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayPeoplePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -431,14 +443,12 @@ namespace ContactsApp.View
         private System.Windows.Forms.TextBox FindTextBox;
         private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Button EditButton;
-        private PictureBox pictureBox1;
         private System.Windows.Forms.ListBox ContactsListBox;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private Panel DateOfBirthPanel;
-        private Label BirthdaysLabel;
-        private Label TodayIsTheBirthdayOfLabel;
-        private PictureBox BirthdayPeoplePictureBox;
+        private System.Windows.Forms.Panel DateOfBirthPanel;
+        private System.Windows.Forms.PictureBox BirthdayPeoplePictureBox;
+        private System.Windows.Forms.Label TodayIsTheBirthdayOfLabel;
+        private System.Windows.Forms.Label BirthdaysLabel;
     }
 }
-
