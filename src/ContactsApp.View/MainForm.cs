@@ -248,10 +248,5 @@ namespace ContactsApp.View
             AboutForm aboutForm = new AboutForm();
             aboutForm.Show();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
