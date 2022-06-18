@@ -58,9 +58,9 @@ namespace ContactsApp.View
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.DateOfBirthPanel = new System.Windows.Forms.Panel();
+            this.BirthdaysLabel = new System.Windows.Forms.Label();
             this.TodayIsTheBirthdayOfLabel = new System.Windows.Forms.Label();
             this.BirthdayPeoplePictureBox = new System.Windows.Forms.PictureBox();
-            this.BirthdaysLabel = new System.Windows.Forms.Label();
             this.ContactMenuStrip.SuspendLayout();
             this.DateOfBirthPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BirthdayPeoplePictureBox)).BeginInit();
@@ -340,6 +340,14 @@ namespace ContactsApp.View
             this.DateOfBirthPanel.Size = new System.Drawing.Size(551, 137);
             this.DateOfBirthPanel.TabIndex = 44;
             // 
+            // BirthdaysLabel
+            // 
+            this.BirthdaysLabel.AutoSize = true;
+            this.BirthdaysLabel.Location = new System.Drawing.Point(151, 20);
+            this.BirthdaysLabel.Name = "BirthdaysLabel";
+            this.BirthdaysLabel.Size = new System.Drawing.Size(0, 17);
+            this.BirthdaysLabel.TabIndex = 2;
+            // 
             // TodayIsTheBirthdayOfLabel
             // 
             this.TodayIsTheBirthdayOfLabel.AutoSize = true;
@@ -357,14 +365,6 @@ namespace ContactsApp.View
             this.BirthdayPeoplePictureBox.Size = new System.Drawing.Size(142, 131);
             this.BirthdayPeoplePictureBox.TabIndex = 0;
             this.BirthdayPeoplePictureBox.TabStop = false;
-            // 
-            // BirthdaysLabel
-            // 
-            this.BirthdaysLabel.AutoSize = true;
-            this.BirthdaysLabel.Location = new System.Drawing.Point(151, 20);
-            this.BirthdaysLabel.Name = "BirthdaysLabel";
-            this.BirthdaysLabel.Size = new System.Drawing.Size(0, 17);
-            this.BirthdaysLabel.TabIndex = 2;
             // 
             // MainForm
             // 
