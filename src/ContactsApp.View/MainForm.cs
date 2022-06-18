@@ -57,7 +57,7 @@ namespace ContactsApp.View
             _currentContact = _project.SortContacts(_project.Contacts);
             ContactsListBox.Items.Clear();
             BirthdaysLabel.Text = "";
-            for(int i=0; i < _currentContact.Count; i++)
+            for (int i = 0; i < _currentContact.Count; i++)
             {
                 ContactsListBox.Items.Add(_currentContact[i].Surname);
             }
@@ -244,7 +244,7 @@ namespace ContactsApp.View
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Information,
             MessageBoxDefaultButton.Button1);
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 _projectSerializer.SaveToFile(_project);
                 Close();
