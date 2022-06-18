@@ -59,6 +59,10 @@ namespace ContactsApp.View
             this.AddButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
+            this.DateOfBirthPanel = new System.Windows.Forms.Panel();
+            this.BirthdaysLabel = new System.Windows.Forms.Label();
+            this.TodayIsTheBirthdayOfLabel = new System.Windows.Forms.Label();
+            this.BirthdayPeoplePictureBox = new System.Windows.Forms.PictureBox();
             this.ContactMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -328,13 +332,19 @@ namespace ContactsApp.View
             // DateOfBirthPanel
             // 
             // 
+            // BirthdaysLabel
+            // 
+            this.BirthdaysLabel.AutoSize = true;
+            this.BirthdaysLabel.Location = new System.Drawing.Point(151, 20);
+            this.BirthdaysLabel.Name = "BirthdaysLabel";
+            this.BirthdaysLabel.Size = new System.Drawing.Size(0, 17);
+            this.BirthdaysLabel.TabIndex = 2;
+            // 
             // TodayIsTheBirthdayOfLabel
             //
             // 
             // BirthdayPeoplePictureBox
             // 
-            // 
-            // BirthdaysLabel
             // 
             // MainForm
             // 
