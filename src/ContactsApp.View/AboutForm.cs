@@ -16,10 +16,5 @@ namespace ContactsApp.View
         {
             InitializeComponent();
         }
-
-        private void EmailLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
     }
 }

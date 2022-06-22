@@ -19,6 +19,21 @@ namespace ContactsApp.View
         /// </summary> 
         private Project _project = new Project();
 
+        /// <summary>
+        /// Создание списка контактов.
+        /// </summary> 
+        private List<Contact> _currentContact;
+
+        /// <summary>
+        /// Создание списка контактов.
+        /// </summary> 
+        private List<Contact> _currentContactDateOfBirth;
+
+        /// <summary>
+        /// Экземпляр класс ProjectSerializer для сереализации.
+        /// </summary>
+        private ProjectSerializer _projectSerializer = new ProjectSerializer();
+
         public MainForm()
         {
             InitializeComponent();
@@ -33,21 +48,6 @@ namespace ContactsApp.View
             DateOfBirthPanel.Visible = false;
             BirthdayPeople();
         }
-
-        /// <summary>
-        /// Создание списка контактов.
-        /// </summary> 
-        List<Contact> _currentContact;
-
-        /// <summary>
-        /// Создание списка контактов.
-        /// </summary> 
-        List<Contact> _currentContactDateOfBirth;
-
-        /// <summary>
-        /// Экземпляр класс ProjectSerializer для сереализации.
-        /// </summary>
-        private ProjectSerializer _projectSerializer = new ProjectSerializer();
 
         /// <summary>
         /// Очищает ContsctsListBox и добавляет данные из коллекции.
@@ -71,10 +71,8 @@ namespace ContactsApp.View
         {
             _currentContactDateOfBirth = _project.SearchByDateOfirth(_currentContact);
             DateOfBirthPanel.Visible = _currentContactDateOfBirth.Count > 0;
-            for (int i = 0; i < _currentContactDateOfBirth.Count; i++)
-            {
-                BirthdaysLabel.Text = BirthdaysLabel.Text + _currentContactDateOfBirth[i].Surname + "\n";
-            }
+            var surnames = _currentContactDateOfBirth.Select(contact => contact.Surname).ToArray();
+            BirthdaysLabel.Text = string.Join("\n", surnames);
         }
 
         /// <summary>

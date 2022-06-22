@@ -14,11 +14,6 @@ namespace ContactsApp.View.Resources
 {
     public partial class ContactForm : Form
     {
-        public ContactForm()
-        {
-            InitializeComponent();
-        }
-        
         /// <summary>
         /// Создание экземпляра класса Contact.
         /// </summary>                         
@@ -68,6 +63,14 @@ namespace ContactsApp.View.Resources
         /// Переменная розового цвета. 
         /// </summary>  
         private Color _colorLightPink = Color.LightPink;
+
+        /// <summary>
+        /// Конструктор класса ContactForm. 
+        /// </summary> 
+        public ContactForm()
+        {
+            InitializeComponent();
+        }
 
         /// <summary>
         /// Возвращает или задает значение контакта

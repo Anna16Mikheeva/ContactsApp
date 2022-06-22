@@ -110,7 +110,7 @@ namespace ContactsApp.View
             this.EmailLinkLabel.TabIndex = 6;
             this.EmailLinkLabel.TabStop = true;
             this.EmailLinkLabel.Text = "anna.mav31@gmail.com";
-            this.EmailLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.EmailLinkLabel_LinkClicked);
+ 
             // 
             // GitHubLinkLabel
             // 
