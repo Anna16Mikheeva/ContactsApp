@@ -172,11 +172,11 @@ namespace ContactsApp.View.Resources
             {
                 _contactCopy.Surname = SurnameTextBox.Text;
                 _surnameError = "";
-                SurnameTextBox.BackColor = Color.White;
+                SurnameTextBox.BackColor = _colorWhite;
             }
             catch (ArgumentException exception)
             {
-                SurnameTextBox.BackColor = Color.LightPink;
+                SurnameTextBox.BackColor = _colorLightPink;
                 _surnameError = exception.Message;
             }
         }
