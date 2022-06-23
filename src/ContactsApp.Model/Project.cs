@@ -33,7 +33,7 @@ namespace ContactsApp.Model
         /// <summary>
         /// Поиск контакта по дате рождения.
         /// </summary>
-        public List<Contact> SearchByDateOfirth(List<Contact> contacts)
+        public List<Contact> SearchByDateOfBirth(List<Contact> contacts)
         {
             contacts = contacts.Where(contact => (contact.DateOfBirth.Day == DateTime.Now.Day) &&
                 (contact.DateOfBirth.Month == DateTime.Now.Month)).ToList();

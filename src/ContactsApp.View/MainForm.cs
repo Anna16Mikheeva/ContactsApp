@@ -69,7 +69,7 @@ namespace ContactsApp.View
         /// </summary> 
         private void BirthdayPeople()
         {
-            _currentContactDateOfBirth = _project.SearchByDateOfirth(_currentContact);
+            _currentContactDateOfBirth = _project.SearchByDateOfBirth(_currentContact);
             DateOfBirthPanel.Visible = _currentContactDateOfBirth.Count > 0;
             var surnames = _currentContactDateOfBirth.Select(contact => contact.Surname).ToArray();
             BirthdaysLabel.Text = string.Join("\n", surnames);
