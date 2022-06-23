@@ -26,9 +26,9 @@ ChangesAssociations=yes
 DefaultGroupName={#MyAppName}
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\»‚‡Ì\Desktop
+OutputDir=C:\Users\–ò–≤–∞–Ω\Desktop
 OutputBaseFilename=ContactsApp
-SetupIconFile=C:\Users\»‚‡Ì\source\repos\ContactsApp\src\ContactsApp.View\Resources\favicon.ico
+SetupIconFile=C:\Users\–ò–≤–∞–Ω\source\repos\ContactsApp\src\ContactsApp.View\Resources\favicon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -59,4 +59,3 @@ Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: de
 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-
